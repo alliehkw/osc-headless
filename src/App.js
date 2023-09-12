@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useQuery, gql } from "@apollo/client";
+import logo from "./logo.svg";
+import "./App.css";
+
+const app_data = gql`
+  {
+    pages {
+      nodes {
+        title
+        slug
+      }
+    }
+  }
+`;
 
 function App() {
+  const { loading, error, data } = useQuery(app_data);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+  // TO DO: error handling
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hey</h1>
     </div>
   );
 }
