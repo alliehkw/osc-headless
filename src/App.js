@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import NavBar from "./components/navbar/NavBar.js";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Content from "./components/content/Content.js";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import "./App.css";
 
@@ -55,14 +56,16 @@ const app_data = gql`
 
 function App() {
   const { loading, error, data } = useQuery(app_data);
-
   // TO DO: error handling
+  // TO DO: dynamically create pages
   return (
     <>
       {!loading ? (
         <div className="App">
-          <NavBar menu_data={data.menuItems.edges} />
-          <h1>le app</h1>
+          <Router>
+            <NavBar menu_data={data.menuItems.edges} />
+            <Content content_data={data.pages.nodes} />
+          </Router>
         </div>
       ) : null}
     </>
