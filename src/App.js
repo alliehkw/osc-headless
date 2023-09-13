@@ -3,26 +3,6 @@ import NavBar from "./components/navbar/NavBar.js";
 import Content from "./components/content/Content.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import "./App.css";
-
-// menuItems(where: { location: PRIMARY }) {
-//   edges {
-//     node {
-//       id
-//       label
-//       order
-//       parentId
-//       connectedNode {
-//         node {
-//           ... on Page {
-//             id
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 
 const app_data = gql`
   {
@@ -34,6 +14,14 @@ const app_data = gql`
           order
           parentId
           locations
+          customMenuItems {
+            image {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
+          }
           connectedNode {
             node {
               ... on Page {

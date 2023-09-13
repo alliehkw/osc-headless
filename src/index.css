@@ -1,13 +1,112 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --osc-brand-color: #008771;
+  --osc-green-01: #DDF9F4;
+  --osc-green-05: #004154;
+  --osc-green-06: #015143;
+  --osc-green-07: #003028;
+  --body-text: #1C3A49;
+  --gray-01: #EFF7FB;
+  --gray-02: #C4DAE3;
+  --gray-03: #8AA0AA;
+  --gray-04: #586C75;
+  --gray-05: #28404B;
+  --gray-06: #112E3D;
+  --white: #FFFFFF;
+  --black: #000;
+  --star-size: 1.5em;
+  --star-color: #FCBD06;
+  --star-background: #C4DAE3;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* TYPEOGRAPHY  */
+@font-face {
+  font-family: "Petersbug, Regular";
+  src:
+    url("./fonts/Petersburg/Regular.otf") format("opentype")
+}
+
+@font-face {
+  font-family: "Apertura, Regular";
+  src:
+    url("./fonts/Apertura/Regular.otf") format("opentype")
+}
+
+body {
+  margin: 0;
+  font-family: 'Apertura, Regular';
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--body-text);
+}
+
+.App {
+  /* background-color: var(--white); */
+  background-color: pink;
+  text-align: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 106.25%;
+  font-family: 'Petersburg, Regular';
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 108.33%;
+  font-family: 'Petersburg, Regular';
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2.25em;
+  line-height: 111.11%;
+  font-family: 'Petersburg, Regular';
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.625em;
+  line-height: 120%;
+  font-weight: 450;
+  font-family: 'Apertura, Regular';
+  margin: 0;
+}
+
+h5 {
+  font-size: 1.25em;
+  line-height: 150%;
+  font-weight: 450;
+  font-family: 'Apertura, Regular';
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 150%;
+  font-family: 'Apertura, Regular';
+  font-weight: 400;
+  margin: 0;
+}
+
+p.body-text {
+  font-family: 'Apertura, Regular';
+  font-size: 1.25em;
+  line-height: 150%;
+}
+
+p.allCaps {
+  font-size: 0.875em;
+  line-height: 142.857%;
+  font-family: 'Apertura, Regular';
+  font-weight: 450;
+  text-transform: uppercase;
+  letter-spacing: 0.0875em;
 }

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import MenuItems from "./MenuItems";
+import "../../styles/navbar.css";
 function NavBar({ menu_data }) {
   const [menuItems, setMenuItems] = useState([]);
   const [dropDowns, setDropDowns] = useState({});
+  const [dropDownVisible, setDropDownVisible] = useState({});
   // Seperate nav items into parents and their drop down components
   useEffect(() => {
     const menuItemsArray = [];
@@ -22,11 +24,26 @@ function NavBar({ menu_data }) {
     setDropDowns(dropDownsObj);
   }, []);
 
+  // Create an object to track whether the drop downs are visible or not
+  useEffect(() => {
+    const updatedDropDownVisible = {};
+    menuItems.forEach((data) => {
+      const this_drop_downs = dropDowns[data.node.id];
+      if (this_drop_downs) {
+        updatedDropDownVisible[data.node.id] = false;
+      }
+    });
+    setDropDownVisible(updatedDropDownVisible);
+  }, [menuItems]);
+
   return (
     <div className="navbar">
-      <div className="menu-items">
-        <MenuItems menu_items={menuItems} drop_downs={dropDowns} />
-      </div>
+      <MenuItems
+        menu_items={menuItems}
+        drop_downs={dropDowns}
+        dropDownVisible={dropDownVisible}
+        setDropDownVisible={setDropDownVisible}
+      />
     </div>
   );
 }

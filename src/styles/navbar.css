@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.nav-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 5.2em;
+}
+  
+.nav-image-container img {
+    flex-shrink: 0;
+    width: 100%;
+  }
