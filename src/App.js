@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/navbar/NavBar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
@@ -56,21 +56,13 @@ const app_data = gql`
 function App() {
   const { loading, error, data } = useQuery(app_data);
 
-  // useEffect(() => {
-  //   console.log("data", data);
-  //   console.log("loading", loading);
-  //   console.log("type app", typeof data);
-  // }, [data]);
   // TO DO: error handling
   return (
     <>
       {!loading ? (
         <div className="App">
-          <NavBar nav_data={data.menuItems.edges} />
-          <h1>hey</h1>
-          <p>ok</p>
-          <p>yo</p>
-          <p>test</p>
+          <NavBar menu_data={data.menuItems.edges} />
+          <h1>le app</h1>
         </div>
       ) : null}
     </>
