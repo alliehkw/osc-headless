@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MenuItems from "./MenuItems";
-// import { useLocation } from "react-router-dom";
+
 import "../../styles/navbar.css";
 function NavBar({ menu_data }) {
   const [menuItems, setMenuItems] = useState([]);
@@ -8,8 +8,7 @@ function NavBar({ menu_data }) {
   const [dropDownVisible, setDropDownVisible] = useState({});
   // State to hold the value of the navcolor - based on scroll
   const [navbarHasColor, setNavbarHasColor] = useState(false);
-  // useLocation to determine which page where on to change the navbar colors
-  // const location = useLocation();
+
   // Seperate nav items into parents and their drop down components
   useEffect(() => {
     const menuItemsArray = [];
@@ -53,14 +52,18 @@ function NavBar({ menu_data }) {
   window.addEventListener("scroll", changeNavbar);
 
   return (
-    <div className={navbarHasColor ? "navbar color" : "navbar"}>
-      <MenuItems
-        menu_items={menuItems}
-        drop_downs={dropDowns}
-        dropDownVisible={dropDownVisible}
-        setDropDownVisible={setDropDownVisible}
-        navbarHasColor={navbarHasColor}
-      />
+    <div
+      className={navbarHasColor ? "navbar-container color" : "navbar-container"}
+    >
+      <div className="navbar">
+        <MenuItems
+          menu_items={menuItems}
+          drop_downs={dropDowns}
+          dropDownVisible={dropDownVisible}
+          setDropDownVisible={setDropDownVisible}
+          navbarHasColor={navbarHasColor}
+        />
+      </div>
     </div>
   );
 }

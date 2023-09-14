@@ -1,11 +1,18 @@
+.navbar-container {
+    position: fixed;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    color: var(--white);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .navbar {
     display: flex;
-    flex-direction: column;
-    position: fixed;
+    justify-content: space-between;
     background-color: transparent;
-    color: var(--white);
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     padding: 0 3.75em;
+    width: 100%;
     max-width: 1440px;
     max-height: 72px;
 }
@@ -15,19 +22,15 @@
     transition: color 0.5s ease-in-out;
 }
 
-.navbar.color {
+.navbar-container.color {
     background-color: var(--white);
     color: var(--gray-06);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-.navbar.color a {
+.navbar-container.color a {
     color: var(--gray-06);
 }
-
-/* This allows us to target both the label and the drop down even though
-they have relative position to eachother. This is important to allow the drop
-down on hover effect to work properly*/
 
 .menu-items {
     display: flex;
@@ -81,6 +84,41 @@ p#drop-down {
     flex-shrink: 0;
     width: 100%;
   }
+
+button.nav-button {
+    padding: 0.8em 1.067em;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.navbar-container button.nav-button.lowContrast.home {
+    background-color: transparent;
+    color: var(--gray-06);
+}
+
+.navbar-container button.nav-button.highContrast.home {
+    background-color: var(--osc-brand-color);
+    color: var(--white);
+}
+
+.navbar-container button.nav-button.lowContrast.notHome {
+    background-color: transparent;
+    color: var(--white);
+}
+
+.navbar-container button.nav-button.highContrast.notHome {
+    background-color: var(--white);
+    color: var(--osc-brand-color);
+}
+
+.navbar-container.color button.nav-button.lowContrast.notHome {
+    background-color: white;
+    color: var(--gray-06);
+}
+
+.navbar-container.color button.nav-button.highContrast.notHome {
+    background-color: var(--osc-brand-color);
+    color: var(--white);
+}
   
 svg.navbarHasColor {
     stroke: var(--gray-06);

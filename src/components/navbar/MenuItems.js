@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import MenuItem from "./MenuItem.js";
 import DropDown from "./DropDown.js";
@@ -9,6 +9,25 @@ function MenuItems({
   setDropDownVisible,
   navbarHasColor,
 }) {
+  // Split up the menu items between the text based and the button based so we can
+  // format them in different divs
+  const [textMenuItems, setTextMenuItems] = useState([]);
+  const [buttonMenuItems, setButtonMenuItems] = useState([]);
+
+  useEffect(() => {
+    for (let item of menu_items) {
+      if (item.node.customMenuItems.isThisAButton) {
+        let formerButtonMenuItems = buttonMenuItems;
+        formerButtonMenuItems.push(item);
+        setButtonMenuItems(formerButtonMenuItems);
+      } else {
+        let formerTextMenuItems = textMenuItems;
+        formerTextMenuItems.push(item);
+        setTextMenuItems(formerTextMenuItems);
+      }
+    }
+  }, [menu_items]);
+
   const handleMouseEnter = (id) => {
     setDropDownVisible({ ...dropDownVisible, [id]: true });
   };
@@ -16,7 +35,8 @@ function MenuItems({
   const handleMouseLeave = (id) => {
     setDropDownVisible({ ...dropDownVisible, [id]: false });
   };
-  const menuItems = menu_items.map((data, index) => {
+
+  const textMenu = textMenuItems.map((data, index) => {
     const currentId = data.node.id;
     const this_drop_downs = drop_downs[currentId];
     let slug;
@@ -40,8 +60,9 @@ function MenuItems({
                 <div>
                   <MenuItem
                     item_data={data.node}
-                    this_drop_downs={this_drop_downs}
+                    this_drop_downs={false}
                     navbarHasColor={navbarHasColor}
+                    isButton={false}
                   />
                 </div>
               </Link>
@@ -51,6 +72,7 @@ function MenuItems({
                   item_data={data.node}
                   this_drop_downs={this_drop_downs}
                   navbarHasColor={navbarHasColor}
+                  isButton={false}
                 />
                 {/* Hide / show drop down based on if its visible or not  */}
                 <DropDown
@@ -65,10 +87,31 @@ function MenuItems({
     );
   });
 
-  console.log(dropDownVisible);
+  const buttonMenu = buttonMenuItems.map((data, index) => {
+    let slug = `/${data.node.connectedNode.node.slug}`;
+    return (
+      <div className="button-element" key={index}>
+        <div className="menu-item">
+          <ul>
+            <Link to={slug}>
+              <div>
+                <MenuItem
+                  item_data={data.node}
+                  this_drop_downs={false}
+                  navbarHasColor={navbarHasColor}
+                  isButton={true}
+                />
+              </div>
+            </Link>
+          </ul>
+        </div>
+      </div>
+    );
+  });
   return (
     <>
-      <div className="menu-items">{menuItems}</div>
+      <div className="menu-items">{textMenu}</div>
+      <div className="menu-items">{buttonMenu}</div>
       <Outlet />
     </>
   );

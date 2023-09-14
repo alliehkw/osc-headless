@@ -27,6 +27,8 @@ const app_data = gql`
                 mediaItemUrl
               }
             }
+            isThisAButton
+            buttonColor
           }
           connectedNode {
             node {
