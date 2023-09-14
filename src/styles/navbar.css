@@ -9,7 +9,8 @@
 
 .navbar a {
     color: var(--white);
-    transition: color 0.5s ease-in-out;}
+    transition: color 0.5s ease-in-out;
+}
 
 /*
 make all things change color on scroll 
@@ -58,3 +59,12 @@ make logo change color on scroll */
     width: 100%;
   }
 
+.navbarHasColor {
+    stroke: var(--gray-06);
+    transition: stroke 0.5s ease-in-out;
+}
+
+.navbarTransparent {
+    stroke: var(--white);
+    transition: stroke 0.5s ease-in-out;
+}

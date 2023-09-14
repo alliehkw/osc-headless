@@ -1,4 +1,4 @@
-function DownCarrot({ svgColor }) {
+function DownCarrot({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,11 +6,11 @@ function DownCarrot({ svgColor }) {
       height="16"
       viewBox="0 0 17 16"
       fill="none"
+      className={className}
     >
       <g clipPath="url(#clip0_742_100)">
         <path
           d="M4.16699 6L8.16699 10L12.167 6"
-          stroke={svgColor}
           strokeLinecap="round"
           strokeLinejoin="round"
         />

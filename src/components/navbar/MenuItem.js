@@ -15,9 +15,9 @@ function MenuItem({ item_data, this_drop_downs, navbarHasColor }) {
       )}
       {/* If this menu item has drop downs associated with it display a down carrot  */}
       {this_drop_downs ? (
-        <div>
-          <DownCarrot svgColor={navbarHasColor ? "#112E3D" : "#FFFFFF"} />
-        </div>
+        <DownCarrot
+          className={navbarHasColor ? "navbarHasColor" : "navbarTransparent"}
+        />
       ) : null}
     </div>
   );
