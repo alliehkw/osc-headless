@@ -6,7 +6,7 @@ import { useQuery, gql } from "@apollo/client";
 
 const app_data = gql`
   {
-    menuItems {
+    menuItems(first: 500) {
       edges {
         node {
           id

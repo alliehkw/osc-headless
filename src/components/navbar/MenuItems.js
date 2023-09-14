@@ -8,6 +8,7 @@ function MenuItems({
   dropDownVisible,
   setDropDownVisible,
 }) {
+  // console.log(drop_downs);
   const handleMouseEnter = (id) => {
     setDropDownVisible({ ...dropDownVisible, [id]: true });
   };

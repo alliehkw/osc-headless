@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MenuItems from "./MenuItems";
 import "../../styles/navbar.css";
 function NavBar({ menu_data }) {
+  console.log("menu_data", menu_data);
   const [menuItems, setMenuItems] = useState([]);
   const [dropDowns, setDropDowns] = useState({});
   const [dropDownVisible, setDropDownVisible] = useState({});
