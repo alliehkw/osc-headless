@@ -7,8 +7,8 @@ function MenuItems({
   drop_downs,
   dropDownVisible,
   setDropDownVisible,
+  navbarHasColor,
 }) {
-  // console.log(drop_downs);
   const handleMouseEnter = (id) => {
     setDropDownVisible({ ...dropDownVisible, [id]: true });
   };
@@ -37,15 +37,18 @@ function MenuItems({
           {slug ? (
             <Link to={slug}>
               <div>
-                <MenuItem item_data={data.node} />
+                <MenuItem
+                  item_data={data.node}
+                  this_drop_downs={this_drop_downs}
+                />
               </div>
             </Link>
           ) : (
             <div>
               <MenuItem
                 item_data={data.node}
-                dropDownVisible={dropDownVisible}
-                setDropDownVisible={setDropDownVisible}
+                this_drop_downs={this_drop_downs}
+                navbarHasColor={navbarHasColor}
               />
               {/* Hide / show drop down based on if its visible or not  */}
               <DropDown

@@ -1,10 +1,48 @@
 .navbar {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    background-color: transparent;
+    color: var(--white);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.navbar a {
+    color: var(--white);
+    transition: color 0.5s ease-in-out;}
+
+/*
+make all things change color on scroll 
+make logo change color on scroll */
+
+.navbar.color {
+    background-color: var(--white);
+    color: var(--gray-06);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.navbar.color a {
+    color: var(--gray-06);
 }
 
 .menu-items {
     display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    display: flex;
+    text-align: left;
+}
+
+.drop-down {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.drop-down ul {
+    padding: 0;
 }
 
 .nav-image-container {
@@ -19,3 +57,4 @@
     flex-shrink: 0;
     width: 100%;
   }
+

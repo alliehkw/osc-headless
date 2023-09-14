@@ -44,6 +44,7 @@ body {
   background-color: pink;
   text-align: center;
   align-items: center;
+  height: 200vh;
 }
 
 h1 {
@@ -96,6 +97,10 @@ h6 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 p.body-text {
   font-family: 'Apertura, Regular';
   font-size: 1.25em;
@@ -109,4 +114,42 @@ p.allCaps {
   font-weight: 450;
   text-transform: uppercase;
   letter-spacing: 0.0875em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* a:visited { 
+  text-decoration: none; 
+ } */
+
+button {
+  font-size: 0.9375em;
+  line-height: 106.667%;
+  font-family: 'Apertura, Regular';
+  letter-spacing: 0.046875em;
+  text-transform: uppercase;
+  font-weight: 450;
+  border-radius: 0.125em;
+  border: solid 0.0625em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.stars {
+  --percent: calc(var(--stars)/5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+  &::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-color) var(--percent), var(--star-background) var(--percent));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
