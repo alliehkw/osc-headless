@@ -5,16 +5,15 @@
     background-color: transparent;
     color: var(--white);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    padding: 0 3.75em;
+    max-width: 1440px;
+    max-height: 72px;
 }
 
 .navbar a {
     color: var(--white);
     transition: color 0.5s ease-in-out;
 }
-
-/*
-make all things change color on scroll 
-make logo change color on scroll */
 
 .navbar.color {
     background-color: var(--white);
@@ -26,24 +25,46 @@ make logo change color on scroll */
     color: var(--gray-06);
 }
 
+/* This allows us to target both the label and the drop down even though
+they have relative position to eachother. This is important to allow the drop
+down on hover effect to work properly*/
+
 .menu-items {
     display: flex;
     align-items: center;
+    gap: 1.25em;
 }
 
 .menu-item {
-    display: flex;
+    display: block;
     text-align: left;
+    position: relative;
 }
 
-.drop-down {
+.menu-item-label {
+    display: flex;
+    gap: 0.25em;
+    align-items: center;
+}
+
+.drop-downs {
     display: flex;
     flex-direction: column;
     text-align: left;
+    position: absolute;
+    background-color: var(--white);
+    top: 100%;
+    width: 8em;
 }
 
-.drop-down ul {
+ul {
     padding: 0;
+}
+
+p#drop-down {
+    color: var(--gray-06);
+    text-align: left;
+    padding: 0.5em;
 }
 
 .nav-image-container {
@@ -51,20 +72,22 @@ make logo change color on scroll */
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width: 5.2em;
+    width: 82.835px;
+    height: 32.201px;
+    margin-right: 0.5em;
 }
   
 .nav-image-container img {
     flex-shrink: 0;
     width: 100%;
   }
-
-.navbarHasColor {
+  
+svg.navbarHasColor {
     stroke: var(--gray-06);
     transition: stroke 0.5s ease-in-out;
 }
 
-.navbarTransparent {
+svg.navbarTransparent {
     stroke: var(--white);
     transition: stroke 0.5s ease-in-out;
 }

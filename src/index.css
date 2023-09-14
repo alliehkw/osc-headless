@@ -40,8 +40,8 @@ body {
 }
 
 .App {
+  background-color: hotpink;
   /* background-color: var(--white); */
-  background-color: pink;
   text-align: center;
   align-items: center;
   height: 200vh;
@@ -70,6 +70,7 @@ h3 {
   line-height: 111.11%;
   font-family: 'Petersburg, Regular';
   font-weight: 400;
+  margin: 0;
 }
 
 h4 {

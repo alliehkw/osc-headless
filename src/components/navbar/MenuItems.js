@@ -28,39 +28,44 @@ function MenuItems({
     }
     return (
       <div
-        className="menu-item"
+        className="hover-container"
         key={index}
         onMouseEnter={() => handleMouseEnter(currentId)}
         onMouseLeave={() => handleMouseLeave(currentId)}
       >
-        <ul>
-          {slug ? (
-            <Link to={slug}>
+        <div className="menu-item">
+          <ul>
+            {slug ? (
+              <Link to={slug}>
+                <div>
+                  <MenuItem
+                    item_data={data.node}
+                    this_drop_downs={this_drop_downs}
+                    navbarHasColor={navbarHasColor}
+                  />
+                </div>
+              </Link>
+            ) : (
               <div>
                 <MenuItem
                   item_data={data.node}
                   this_drop_downs={this_drop_downs}
+                  navbarHasColor={navbarHasColor}
+                />
+                {/* Hide / show drop down based on if its visible or not  */}
+                <DropDown
+                  drop_down={this_drop_downs}
+                  isVisible={dropDownVisible[currentId]}
                 />
               </div>
-            </Link>
-          ) : (
-            <div>
-              <MenuItem
-                item_data={data.node}
-                this_drop_downs={this_drop_downs}
-                navbarHasColor={navbarHasColor}
-              />
-              {/* Hide / show drop down based on if its visible or not  */}
-              <DropDown
-                drop_down={this_drop_downs}
-                isVisible={dropDownVisible[currentId]}
-              />
-            </div>
-          )}
-        </ul>
+            )}
+          </ul>
+        </div>
       </div>
     );
   });
+
+  console.log(dropDownVisible);
   return (
     <>
       <div className="menu-items">{menuItems}</div>

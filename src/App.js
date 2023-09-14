@@ -21,6 +21,12 @@ const app_data = gql`
                 mediaItemUrl
               }
             }
+            imageAlt {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
           }
           connectedNode {
             node {
@@ -33,7 +39,7 @@ const app_data = gql`
         }
       }
     }
-    pages {
+    pages(first: 500) {
       nodes {
         title
         slug
