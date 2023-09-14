@@ -8,13 +8,12 @@ function NavBar({ menu_data }) {
   const [dropDownVisible, setDropDownVisible] = useState({});
   // State to hold the value of the navcolor - based on scroll
   const [navbarHasColor, setNavbarHasColor] = useState(false);
-
   // Seperate nav items into parents and their drop down components
   useEffect(() => {
     const menuItemsArray = [];
     const dropDownsObj = {};
     for (const menu_item of menu_data) {
-      const { parentId } = menu_item.node;
+      const { parentId } = menu_item;
       if (parentId == null) {
         menuItemsArray.push(menu_item);
       } else {
@@ -32,9 +31,9 @@ function NavBar({ menu_data }) {
   useEffect(() => {
     const updatedDropDownVisible = {};
     menuItems.forEach((data) => {
-      const this_drop_downs = dropDowns[data.node.id];
+      const this_drop_downs = dropDowns[data.id];
       if (this_drop_downs) {
-        updatedDropDownVisible[data.node.id] = false;
+        updatedDropDownVisible[data.id] = false;
       }
     });
     setDropDownVisible(updatedDropDownVisible);

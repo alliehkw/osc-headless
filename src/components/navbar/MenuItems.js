@@ -16,7 +16,7 @@ function MenuItems({
 
   useEffect(() => {
     for (let item of menu_items) {
-      if (item.node.customMenuItems.isThisAButton) {
+      if (item.customMenuItems.isThisAButton) {
         let formerButtonMenuItems = buttonMenuItems;
         formerButtonMenuItems.push(item);
         setButtonMenuItems(formerButtonMenuItems);
@@ -37,11 +37,11 @@ function MenuItems({
   };
 
   const textMenu = textMenuItems.map((data, index) => {
-    const currentId = data.node.id;
+    const currentId = data.id;
     const this_drop_downs = drop_downs[currentId];
     let slug;
     if (!this_drop_downs) {
-      slug = `/${data.node.connectedNode.node.slug}`;
+      slug = `/${data.connectedNode.node.slug}`;
       if (slug === "/home") {
         slug = "/";
       }
@@ -59,7 +59,7 @@ function MenuItems({
               <Link to={slug}>
                 <div>
                   <MenuItem
-                    item_data={data.node}
+                    item_data={data}
                     this_drop_downs={false}
                     navbarHasColor={navbarHasColor}
                     isButton={false}
@@ -69,7 +69,7 @@ function MenuItems({
             ) : (
               <div>
                 <MenuItem
-                  item_data={data.node}
+                  item_data={data}
                   this_drop_downs={this_drop_downs}
                   navbarHasColor={navbarHasColor}
                   isButton={false}
@@ -88,7 +88,8 @@ function MenuItems({
   });
 
   const buttonMenu = buttonMenuItems.map((data, index) => {
-    let slug = `/${data.node.connectedNode.node.slug}`;
+    let slug = `/${data.connectedNode.node.slug}`;
+
     return (
       <div className="button-element" key={index}>
         <div className="menu-item">
@@ -96,7 +97,7 @@ function MenuItems({
             <Link to={slug}>
               <div>
                 <MenuItem
-                  item_data={data.node}
+                  item_data={data}
                   this_drop_downs={false}
                   navbarHasColor={navbarHasColor}
                   isButton={true}

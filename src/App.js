@@ -8,35 +8,29 @@ import ScrollToTop from "./components/reusables/ScrollToTop.js";
 const app_data = gql`
   {
     menuItems(first: 500) {
-      edges {
-        node {
-          id
-          label
-          order
-          parentId
-          locations
-          customMenuItems {
-            image {
-              node {
-                altText
-                mediaItemUrl
-              }
-            }
-            imageAlt {
-              node {
-                altText
-                mediaItemUrl
-              }
-            }
-            isThisAButton
-            buttonColor
+      nodes {
+        id
+        label
+        order
+        parentId
+        locations
+        customMenuItems {
+          buttonColor
+          image {
+            altText
+            mediaItemUrl
           }
-          connectedNode {
-            node {
-              ... on Page {
-                id
-                slug
-              }
+          imageAlt {
+            altText
+            mediaItemUrl
+          }
+          isThisAButton
+        }
+        connectedNode {
+          node {
+            ... on Page {
+              id
+              slug
             }
           }
         }
@@ -55,13 +49,14 @@ function App() {
   const { loading, error, data } = useQuery(app_data);
   // TO DO: error handling
   // TO DO: dynamically create pages
+
   return (
     <>
       {!loading ? (
         <div className="App">
           <Router>
             <ScrollToTop />
-            <NavBar menu_data={data.menuItems.edges} />
+            <NavBar menu_data={data.menuItems.nodes} />
             <Content content_data={data.pages.nodes} />
           </Router>
         </div>

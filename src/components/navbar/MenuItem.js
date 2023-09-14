@@ -29,14 +29,10 @@ function MenuItem({ item_data, this_drop_downs, navbarHasColor, isButton }) {
                 <img
                   src={
                     navbarHasColor
-                      ? navImageAlt.node.mediaItemUrl
-                      : navImage.node.mediaItemUrl
+                      ? navImageAlt.mediaItemUrl
+                      : navImage.mediaItemUrl
                   }
-                  alt={
-                    navbarHasColor
-                      ? navImageAlt.node.altText
-                      : navImage.node.altText
-                  }
+                  alt={navbarHasColor ? navImageAlt.altText : navImage.altText}
                 />
               </div>
             ) : (

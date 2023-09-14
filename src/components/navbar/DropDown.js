@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 function DropDown({ drop_down, isVisible }) {
   const dropDownBlock = drop_down.map((dd, index) => {
-    let slug = dd.node.connectedNode.node.slug;
+    let slug = dd.connectedNode.node.slug;
     return (
       <>
         {isVisible ? (
@@ -9,7 +9,7 @@ function DropDown({ drop_down, isVisible }) {
             <Link to={slug}>
               <div>
                 <p id="drop-down" className="allCaps">
-                  {dd.node.label}
+                  {dd.label}
                 </p>
               </div>
             </Link>
