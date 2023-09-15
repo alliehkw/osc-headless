@@ -6,7 +6,7 @@ function MenuItem({ item_data, this_drop_downs, navbarHasColor, isButton }) {
   let navImageAlt = item_data.customMenuItems.imageAlt;
   // useLocation to determine which page where on to change the navbar colors
   const location = useLocation();
-
+  // console.log("item_data", item_data.customMenuItems.image);
   return (
     // Dynamically render either the label or the image
     <>
@@ -29,14 +29,18 @@ function MenuItem({ item_data, this_drop_downs, navbarHasColor, isButton }) {
                 <img
                   src={
                     navbarHasColor
-                      ? navImageAlt.mediaItemUrl
-                      : navImage.mediaItemUrl
+                      ? navImageAlt.node.mediaItemUrl
+                      : navImage.node.mediaItemUrl
                   }
-                  alt={navbarHasColor ? navImageAlt.altText : navImage.altText}
+                  alt={
+                    navbarHasColor
+                      ? navImageAlt.node.altText
+                      : navImage.node.altText
+                  }
                 />
               </div>
             ) : (
-              // If no navimage just render the label
+              // If no navimage just render the title
               <p className="allCaps drop-down">{item_data.label}</p>
             )}
             {/* If this menu item has drop downs associated with it display a down carrot  */}

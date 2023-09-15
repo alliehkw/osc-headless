@@ -1,0 +1,25 @@
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* VIDEO HERO  */
+
+.hero-container.video {
+    height: 824px;
+    flex-shrink: 0;
+    background-color: hotpink;
+}
+
+.hero-container.video h1 {
+    width: 13.125em;
+}
+
+.hero-container h1 {
+    width: 10.6em;
+}
+
+/* GENERAL HERO */

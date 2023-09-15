@@ -11,27 +11,29 @@ const app_data = gql`
       nodes {
         id
         label
-        order
         parentId
-        locations
         customMenuItems {
           buttonColor
-          image {
-            altText
-            mediaItemUrl
-          }
-          imageAlt {
-            altText
-            mediaItemUrl
-          }
           isThisAButton
+          imageAlt {
+            node {
+              altText
+              mediaItemUrl
+            }
+          }
+          image {
+            node {
+              altText
+              mediaItemUrl
+            }
+          }
         }
         connectedNode {
           node {
             ... on Page {
               id
-              slug
               isFrontPage
+              slug
             }
           }
         }
@@ -42,6 +44,28 @@ const app_data = gql`
         title
         slug
         isFrontPage
+        flexibleContent {
+          customContentBlocks {
+            ... on FlexibleContentCustomContentBlocksHero {
+              __typename
+              backgroundColor
+              height
+              heroType
+              subTitle
+              title
+              videoUrl
+              videoPoster {
+                node {
+                  altText
+                  mediaItemUrl
+                }
+              }
+            }
+            ... on FlexibleContentCustomContentBlocksContentSection {
+              __typename
+            }
+          }
+        }
       }
     }
   }
