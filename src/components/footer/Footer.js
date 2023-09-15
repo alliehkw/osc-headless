@@ -3,13 +3,14 @@ import "../../styles/footer.css";
 
 function Footer({ footerItems }) {
   const footerNav = footerItems.map((item, index) => {
-    console.log("item", item);
     return (
-      <Link to={item.connectedNode.node.slug}>
-        <div className="footer-item" key={index}>
-          <p className="allCaps">{item.label}</p>
-        </div>
-      </Link>
+      <div key={index}>
+        <Link to={item.connectedNode.node.slug}>
+          <div className="footer-item">
+            <p className="allCaps">{item.label}</p>
+          </div>
+        </Link>
+      </div>
     );
   });
   return (

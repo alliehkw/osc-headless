@@ -1,7 +1,7 @@
 // import React, { useEffect, useState } from "react";
 import NavBar from "./components/navbar/NavBar.js";
 import Footer from "./components/footer/Footer.js";
-import Content from "./components/content/Content.js";
+import Content from "./components/content/PageContent.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ScrollToTop from "./components/reusables/ScrollToTop.js";
@@ -66,6 +66,24 @@ const app_data = gql`
             }
             ... on FlexibleContentCustomContentBlocksContentSection {
               __typename
+              backgroundColor
+              sectionHeader
+              headerTextAlignment
+              sectionSubtext
+              subtextAlignment
+              column {
+                columnHeader
+                rows {
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsText {
+                    __typename
+                    textColor
+                    textContent
+                    textBackground
+                    textBackgroundColor
+                    textBackgroundShape
+                  }
+                }
+              }
             }
           }
         }

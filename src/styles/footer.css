@@ -1,6 +1,7 @@
 .footer-container {
     background-color: var(--osc-green-07);
     display: flex;
+    text-align: left;
 }
 
 .footer-content {

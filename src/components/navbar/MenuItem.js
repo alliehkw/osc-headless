@@ -6,7 +6,6 @@ function MenuItem({ item_data, this_drop_downs, navbarHasColor, isButton }) {
   let navImageAlt = item_data.customMenuItems.imageAlt;
   // useLocation to determine which page where on to change the navbar colors
   const location = useLocation();
-  // console.log("item_data", item_data.customMenuItems.image);
   return (
     // Dynamically render either the label or the image
     <>
