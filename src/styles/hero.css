@@ -6,20 +6,43 @@
     width: 100%;
 }
 
+/* Override default styling and force the text to be on one line  */
+.hero-container .hero-text.one-line {
+    max-width: 90%;
+}
+
 /* VIDEO HERO  */
-
-.hero-container.video {
+/* TO DO: get rid of background color once I add in the video poster!  */
+.video {
     height: 824px;
-    flex-shrink: 0;
     background-color: hotpink;
+    color: var(--white);
 }
 
-.hero-container.video h1 {
-    width: 13.125em;
-}
-
-.hero-container h1 {
-    width: 10.6em;
+.video .hero-text {
+    max-width: 52.5em;
 }
 
 /* GENERAL HERO */
+
+.general .hero-text {
+    max-width: 40em;
+}
+
+.general.short {
+    height: 29.5em;
+}
+
+.general.tall {
+    height: 40.625em;
+}
+
+.green {
+    background-color: var(--osc-brand-color);
+    color: var(--white);
+}
+
+.white {
+    background-color: var(--white);
+    color: var(--osc-brand-color);
+}

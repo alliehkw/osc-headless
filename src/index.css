@@ -40,11 +40,9 @@ body {
 }
 
 .App {
-  background-color: hotpink;
-  /* background-color: var(--white); */
+  background-color: var(--white);
   text-align: center;
   align-items: center;
-  height: 200vh;
 }
 
 h1 {

@@ -1,0 +1,14 @@
+.footer-container {
+    background-color: var(--osc-green-07);
+    display: flex;
+}
+
+.footer-content {
+    max-width: 90em;
+    padding: 7.5em 5.5em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
