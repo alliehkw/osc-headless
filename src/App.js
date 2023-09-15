@@ -31,6 +31,7 @@ const app_data = gql`
             ... on Page {
               id
               slug
+              isFrontPage
             }
           }
         }
@@ -40,6 +41,7 @@ const app_data = gql`
       nodes {
         title
         slug
+        isFrontPage
       }
     }
   }

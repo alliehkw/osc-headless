@@ -42,10 +42,11 @@ function MenuItems({
     let slug;
     if (!this_drop_downs) {
       slug = `/${data.connectedNode.node.slug}`;
-      if (slug === "/home") {
+      if (data.connectedNode.node.isFrontPage) {
         slug = "/";
       }
     }
+
     return (
       <div
         className="hover-container"

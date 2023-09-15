@@ -3,8 +3,9 @@ import Page from "./Page.js";
 function Content({ content_data }) {
   const pagesBlock = content_data.map((page, index) => {
     // Create Routes. Ensure that the home page has route "/"
+    console.log("page", page);
     let route;
-    if (page.slug === "home") {
+    if (page.isFrontPage) {
       route = "/";
     } else {
       route = `/${page.slug}`;
