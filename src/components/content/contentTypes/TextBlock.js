@@ -1,10 +1,11 @@
 function TextBlock({ text_data, numberOfColumns }) {
+  console.log(text_data.textBlockWidth);
   return (
     <div
       className={
         // Override width if marked as full width
         text_data.fullWidth
-          ? `text-block row full-width._${numberOfColumns}`
+          ? `text-block row full-width _${numberOfColumns}`
           : `text-block row _${numberOfColumns}`
       }
     >

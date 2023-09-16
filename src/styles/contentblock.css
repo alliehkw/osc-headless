@@ -10,7 +10,55 @@
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+    margin-bottom: 3.5em;
 }
+
+/* SECTION HEADER ALIGNMENT  */
+
+.section-header-container.left {
+    display: flex;
+    text-align: left;
+    align-items: start;
+    width: 100%;
+}
+
+.section-header-container.center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.section-header-container.right {
+    display: flex;
+    text-align: right;
+    align-items: end;
+    width: 100%;
+}
+
+/* SECTION HEADER SIZES  */
+
+.section-header-container h2.extraSmall, p.extraSmall {
+    max-width: 560px;
+}
+
+.section-header-container h2.small, p.small {
+    max-width: 588px;
+}
+
+.section-header-container h2.standard, p.standard {
+    max-width: 791px;
+}
+
+.section-header-container h2.large, p.large {
+    max-width: 860px;
+}
+
+.section-header-container h2.fullWidth, p.fullWidth {
+    max-width: 1200px;
+}
+
+
 
 .content-block.green {
     background-color: var(--osc-green-01);
@@ -74,10 +122,15 @@ h2.right, p.right {
 }
 
 .row.full-width {
-    max-width: 100%;
+    max-width: 1200px;
 }
 
 /* TO DO: get rid of button alignment class if we never use it  */
-.button-block {
+.button-spacing {
+    display: flex;
     gap: 1em;
+}
+
+.button-spacing.extra-wide-spacing {
+    gap: 2.25em;
 }

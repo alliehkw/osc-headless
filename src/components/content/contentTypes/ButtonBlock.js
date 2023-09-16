@@ -19,7 +19,15 @@ function ButtonBlock({ button_data, numberOfColumns }) {
           : `button-block ${button_data.buttonsAlignment} row _${numberOfColumns}`
       }
     >
-      {buttonBlock}
+      <div
+        className={
+          button_data.extraWideSpaceBetweenButtons
+            ? "button-spacing extra-wide-spacing"
+            : "button-spacing"
+        }
+      >
+        {buttonBlock}
+      </div>
     </div>
   );
 }

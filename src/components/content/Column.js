@@ -2,6 +2,7 @@ import TextBlock from "./contentTypes/TextBlock.js";
 import ImageBlock from "./contentTypes/ImageBlock.js";
 import ButtonBlock from "./contentTypes/ButtonBlock.js";
 import ProviderBlock from "./contentTypes/ProviderBlock.js";
+import MapBlock from "./contentTypes/MapBlock.js";
 
 function Column({ column_data, numberOfColumns }) {
   const rows = column_data.rows.map((row, index) => {
@@ -45,6 +46,16 @@ function Column({ column_data, numberOfColumns }) {
             provider_data={row}
             numberOfColumns={numberOfColumns}
           />
+        </div>
+      );
+    }
+    if (
+      row.__typename ===
+      "FlexibleContentCustomContentBlocksContentSectionColumnRowsMap"
+    ) {
+      return (
+        <div className="row" key={index}>
+          <MapBlock map_data={row} numberOfColumns={numberOfColumns} />
         </div>
       );
     }

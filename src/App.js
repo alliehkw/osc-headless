@@ -68,9 +68,9 @@ const app_data = gql`
               __typename
               backgroundColor
               sectionHeader
-              headerTextAlignment
+              headerWidth
+              headerAlignment
               sectionSubtext
-              subtextAlignment
               column {
                 columnHeader
                 rows {
@@ -86,11 +86,16 @@ const app_data = gql`
                   ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsButtons {
                     buttonsAlignment
                     fullWidth
+                    extraWideSpaceBetweenButtons
                     button {
                       buttonBackgroundColor
                       buttonLinkUrl
                       buttonText
                     }
+                  }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsMap {
+                    address
+                    fullWidth
                   }
                 }
               }
