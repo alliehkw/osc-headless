@@ -22,7 +22,12 @@ function Column({ column_data, numberOfColumns }) {
     ) {
       return (
         <div className="row" key={index}>
-          <ImageBlock image_data={row} numberOfColumns={numberOfColumns} />
+          <ImageBlock
+            image_data={row}
+            numberOfColumns={numberOfColumns}
+            imageAlignment={column_data.rows[index].imageAlignment}
+            gapBetweenImages={column_data.rows[index].gapBetweenImages}
+          />
         </div>
       );
     }

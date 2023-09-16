@@ -1,5 +1,4 @@
 function MapBlock({ map_data, numberOfColumns }) {
-  console.log("map_data", map_data);
   return (
     // TO DO: mimic class naming structure of TextBlock
     <div

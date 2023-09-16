@@ -93,6 +93,34 @@ const app_data = gql`
                       buttonText
                     }
                   }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsImages {
+                    fullWidth
+                    imageAlignment
+                    gapBetweenImages
+                    images {
+                      imageHeight
+                      imageType
+                      imageWidth
+                      imageBorder
+                      imageOverlay {
+                        textColor
+                        shadowUnderOverlay
+                        overlayText
+                        overlayPosition
+                        overlayLink
+                        overlayIsALink
+                        overlayIcon
+                        overlayContent
+                        overlayBackgroundColor
+                      }
+                      image {
+                        node {
+                          altText
+                          mediaItemUrl
+                        }
+                      }
+                    }
+                  }
                   ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsMap {
                     address
                     fullWidth

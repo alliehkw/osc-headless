@@ -157,6 +157,7 @@ button.transparent {
   background-color: transparent;
   color: var(--osc-brand-color);
   border-color: transparent;
+  text-wrap: nowrap;
 }
 
 .stars {

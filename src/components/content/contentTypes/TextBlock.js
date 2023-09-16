@@ -1,5 +1,4 @@
 function TextBlock({ text_data, numberOfColumns }) {
-  console.log(text_data.textBlockWidth);
   return (
     <div
       className={

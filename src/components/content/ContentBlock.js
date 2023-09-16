@@ -3,7 +3,6 @@ import "../../styles/contentblock.css";
 
 function ContentBlock({ content_data }) {
   const columns = content_data.column;
-  console.log("content_data", content_data);
   let numberOfColumns = 0;
   let contentColumns = columns.map((column, index) => {
     numberOfColumns++;
@@ -13,7 +12,6 @@ function ContentBlock({ content_data }) {
       </div>
     );
   });
-  console.log("content_data.sectionHeader", content_data.sectionHeader);
   return (
     <div className={`content-block ${content_data.backgroundColor} `}>
       {content_data.sectionHeader || content_data.sectionSubtext ? (

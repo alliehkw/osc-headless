@@ -129,8 +129,27 @@ h2.right, p.right {
 .button-spacing {
     display: flex;
     gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button-spacing.extra-wide-spacing {
     gap: 2.25em;
 }
+
+/* IMAGE CSS  */
+
+.image-wrapper {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center center; 
+  }
