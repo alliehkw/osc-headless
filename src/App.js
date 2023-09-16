@@ -78,9 +78,19 @@ const app_data = gql`
                     __typename
                     textColor
                     textContent
+                    fullWidth
                     textBackground
                     textBackgroundColor
                     textBackgroundShape
+                  }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsButtons {
+                    buttonsAlignment
+                    fullWidth
+                    button {
+                      buttonBackgroundColor
+                      buttonLinkUrl
+                      buttonText
+                    }
                   }
                 }
               }

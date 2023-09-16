@@ -1,7 +1,19 @@
-function TextBlock() {
+function TextBlock({ text_data, numberOfColumns }) {
   return (
-    <div className="text-block">
-      <h5>text block</h5>
+    <div
+      className={
+        // Override width if marked as full width
+        text_data.fullWidth
+          ? `text-block row full-width._${numberOfColumns}`
+          : `text-block row _${numberOfColumns}`
+      }
+    >
+      <p
+        className={text_data.textColor}
+        dangerouslySetInnerHTML={{
+          __html: text_data.textContent,
+        }}
+      ></p>
     </div>
   );
 }

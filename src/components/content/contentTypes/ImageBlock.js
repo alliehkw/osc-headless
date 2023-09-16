@@ -1,4 +1,4 @@
-function ImageBlock() {
+function ImageBlock({ image_data, numberOfColumns }) {
   return (
     <div className="image-block">
       <h5>image block</h5>

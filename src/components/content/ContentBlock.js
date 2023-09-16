@@ -3,10 +3,12 @@ import "../../styles/contentblock.css";
 
 function ContentBlock({ content_data }) {
   const columns = content_data.column;
+  let numberOfColumns = 0;
   let contentColumns = columns.map((column, index) => {
+    numberOfColumns++;
     return (
       <div key={index}>
-        <Column column_data={column} />
+        <Column column_data={column} numberOfColumns={numberOfColumns} />
       </div>
     );
   });

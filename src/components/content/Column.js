@@ -3,16 +3,15 @@ import ImageBlock from "./contentTypes/ImageBlock.js";
 import ButtonBlock from "./contentTypes/ButtonBlock.js";
 import ProviderBlock from "./contentTypes/ProviderBlock.js";
 
-function Column({ column_data }) {
+function Column({ column_data, numberOfColumns }) {
   const rows = column_data.rows.map((row, index) => {
-    console.log("row", row.__typename);
     if (
       row.__typename ===
       "FlexibleContentCustomContentBlocksContentSectionColumnRowsText"
     ) {
       return (
         <div className="row" key={index}>
-          <TextBlock />
+          <TextBlock text_data={row} numberOfColumns={numberOfColumns} />
         </div>
       );
     }
@@ -22,7 +21,7 @@ function Column({ column_data }) {
     ) {
       return (
         <div className="row" key={index}>
-          <ImageBlock />
+          <ImageBlock image_data={row} numberOfColumns={numberOfColumns} />
         </div>
       );
     }
@@ -32,7 +31,7 @@ function Column({ column_data }) {
     ) {
       return (
         <div className="row" key={index}>
-          <ButtonBlock />
+          <ButtonBlock button_data={row} numberOfColumns={numberOfColumns} />
         </div>
       );
     }
@@ -42,7 +41,10 @@ function Column({ column_data }) {
     ) {
       return (
         <div className="row" key={index}>
-          <ProviderBlock />
+          <ProviderBlock
+            provider_data={row}
+            numberOfColumns={numberOfColumns}
+          />
         </div>
       );
     }
