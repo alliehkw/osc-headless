@@ -41,10 +41,8 @@ function Page({ page_data }) {
   // TO DO: loop through content section and add that in
   return (
     <div className="page">
-      {/* {hero_data.length > 0 ? <Hero hero_data={hero_data} /> : null} */}
       {heros}
       {pageContent}
-      {/* <h3>{page_data.title}</h3> */}
     </div>
   );
 }

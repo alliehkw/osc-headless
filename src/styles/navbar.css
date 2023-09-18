@@ -5,6 +5,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 3;
 }
 
 .navbar {
@@ -67,7 +68,7 @@ ul {
 p#drop-down {
     color: var(--gray-06);
     text-align: left;
-    padding: var(--3sm);
+    padding:  var(--4sm) var(--3sm);
 }
 
 .nav-image-container {

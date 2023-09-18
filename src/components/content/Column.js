@@ -2,6 +2,7 @@ import TextBlock from "./contentTypes/TextBlock.js";
 import ImageBlock from "./contentTypes/ImageBlock.js";
 import ButtonBlock from "./contentTypes/ButtonBlock.js";
 import ProviderBlock from "./contentTypes/ProviderBlock.js";
+import MediaCard from "./contentTypes/MediaCard.js";
 import MapBlock from "./contentTypes/MapBlock.js";
 
 function Column({ column_data, numberOfColumns }) {
@@ -64,8 +65,18 @@ function Column({ column_data, numberOfColumns }) {
         </div>
       );
     }
+    if (
+      row.__typename ===
+      "FlexibleContentCustomContentBlocksContentSectionColumnRowsMediaCard"
+    ) {
+      return (
+        <div className="row" key={index}>
+          <MediaCard card_data={row} numberOfColumns={numberOfColumns} />
+        </div>
+      );
+    }
   });
-  return <div className="column">{rows}</div>;
+  return <div className={`column ${column_data.columnWidth[0]}`}>{rows}</div>;
 }
 
 export default Column;

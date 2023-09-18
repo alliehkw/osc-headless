@@ -58,14 +58,12 @@
     max-width: 1200px;
 }
 
-
-
 .content-block.green {
     background-color: var(--osc-green-01);
 }
 
 .content-block.green .section-header-container {
-    color: var(--green-06);
+    color: var(--osc-green-07);
 }
 
 .content-block.white {
@@ -96,20 +94,29 @@ h2.right, p.right {
     text-align: right;
 }
 
+/* ROWS AND COLUMNS  */
+
 .row a {
     color: var(--osc-brand-color);
     text-decoration: underline;
 }
 
-
 .columns {
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     gap: var(--3md);
+}
+
+.column.quarter {
+    max-width: 276px;
+    padding: var(--4md);
+    gap: var(--sm);
 }
 
 .row {
@@ -152,4 +159,81 @@ h2.right, p.right {
     height: 100%; 
     object-fit: cover; 
     object-position: center center; 
+  }
+
+  /* TEXT CSS  */
+
+  div.oblongCircle {
+    display: flex;
+    padding:  var(--4md);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--4sm);
+    border-radius: 100px;
+    min-width: 48px;
+  }
+
+  div.brandGreen {
+    background-color: var(--osc-brand-color);
+  }
+
+  p.brandGreen {
+    color: var(--osc-brand-color);
+  }
+
+  p.white {
+    color: var(--white);
+  }
+
+  p.gray {
+    color: var(--gray-06);
+  }
+
+  p.mediumGray {
+    color: var(--gray-05);
+  }
+
+ p.mediumGreen {
+    color: var(--osc-green-06);
+  }
+
+  p.bodyText {
+    color: var(--body-text);
+  }
+
+  p.darkGreen {
+    color: var(--osc-green-07);
+  }
+
+  /* MEDIA CARD  */
+
+  .media-card-container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .media-card-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--2sm);
+    gap: var(--3sm);
+  }
+
+  .media-card-text h5 {
+    color: var(--gray-06);
+  }
+
+  .media-card-text p {
+    color: var(--gray-05);
+  }
+
+  .media-card-text button {
+    font-weight: 450;
+    line-height: 16px;
+    letter-spacing: 0.75px;
+    font-size: 15px;
+    text-align: left;
+    padding: 0;
   }

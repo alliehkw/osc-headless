@@ -63,7 +63,7 @@ body {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 64px;
   line-height: 106.25%;
   font-family: 'Petersburg, Regular';
   font-weight: 400;
@@ -72,7 +72,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 48px;
   line-height: 108.33%;
   font-family: 'Petersburg, Regular';
   font-style: normal;
@@ -81,7 +81,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.25em;
+  font-size: 36px;
   line-height: 111.11%;
   font-family: 'Petersburg, Regular';
   font-weight: 400;
@@ -89,7 +89,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.625em;
+  font-size: 26px;
   line-height: 120%;
   font-weight: 450;
   font-family: 'Apertura, Regular';
@@ -97,7 +97,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 20px;
   line-height: 150%;
   font-weight: 450;
   font-family: 'Apertura, Regular';
@@ -106,7 +106,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 16px;
   line-height: 150%;
   font-family: 'Apertura, Regular';
   font-weight: 400;
@@ -122,9 +122,15 @@ p {
 
 p.bodyText {
   font-family: 'Apertura, Regular';
-  font-size: 1.25em;
+  font-size: 20px;
   line-height: 150%;
   color: var(--body-text);
+}
+
+p.bodyText a {
+  font-family: 'Apertura, Regular';
+  font-size: 20px;
+  line-height: 150%;
 }
 
 p.allCaps {

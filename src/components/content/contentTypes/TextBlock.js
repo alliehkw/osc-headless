@@ -8,12 +8,20 @@ function TextBlock({ text_data, numberOfColumns }) {
           : `text-block row _${numberOfColumns}`
       }
     >
-      <p
-        className={text_data.textColor}
-        dangerouslySetInnerHTML={{
-          __html: text_data.textContent,
-        }}
-      ></p>
+      <div
+        className={
+          text_data.textBackground === true
+            ? `${text_data.textBackgroundShape[0]} ${text_data.textBackgroundColor}`
+            : "no-background"
+        }
+      >
+        <p
+          className={text_data.textColor}
+          dangerouslySetInnerHTML={{
+            __html: text_data.textContent,
+          }}
+        ></p>
+      </div>
     </div>
   );
 }
