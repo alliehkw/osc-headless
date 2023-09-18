@@ -1,5 +1,4 @@
 function MediaCard({ card_data }) {
-  console.log(card_data);
   return (
     <div className="media-card-container">
       <div
