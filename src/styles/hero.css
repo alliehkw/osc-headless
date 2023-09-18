@@ -11,6 +11,12 @@
     max-width: 90%;
 }
 
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--3sm);
+}
+
 /* VIDEO HERO  */
 /* TO DO: get rid of background color once I add in the video poster!  */
 .video {

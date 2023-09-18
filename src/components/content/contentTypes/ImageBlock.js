@@ -8,7 +8,6 @@ function ImageBlock({
     let height = image.imageHeight;
     let width = image.imageWidth;
     let borderRadius = image.imageBorder;
-    console.log("gapBetweenImages", gapBetweenImages);
     return (
       <div
         className="image-wrapper"

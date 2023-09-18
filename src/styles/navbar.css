@@ -35,7 +35,7 @@
 .menu-items {
     display: flex;
     align-items: center;
-    gap: 1.25em;
+    gap: var(--3sm);
 }
 
 .menu-item {
@@ -46,7 +46,7 @@
 
 .menu-item-label {
     display: flex;
-    gap: 0.25em;
+    gap: var(--4sm) * 0.5;
     align-items: center;
 }
 
@@ -67,7 +67,7 @@ ul {
 p#drop-down {
     color: var(--gray-06);
     text-align: left;
-    padding: 0.5em;
+    padding: var(--3sm);
 }
 
 .nav-image-container {
@@ -77,7 +77,7 @@ p#drop-down {
     overflow: hidden;
     width: 82.835px;
     height: 32.201px;
-    margin-right: 0.5em;
+    margin-right: var(--4sm);
 }
   
 .nav-image-container img {
@@ -129,6 +129,11 @@ button.nav-button {
 .navbar-container.color button.nav-button.highContrast.notHome {
     background-color: var(--osc-brand-color);
     color: var(--white);
+}
+
+svg {
+    width: var(--3sm);
+    height: var(--3sm);
 }
   
 svg.navbarHasColor {

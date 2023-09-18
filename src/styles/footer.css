@@ -1,15 +1,69 @@
 .footer-container {
     background-color: var(--osc-green-07);
-    display: flex;
     text-align: left;
+    color: var(--white);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    padding: 7.5em 5.5em;
+    justify-content: center;
 }
 
 .footer-content {
-    max-width: 90em;
-    padding: 7.5em 5.5em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.practice-details .footer-column{
+    width: 282px;
+}
+
+.footer-links {
+    display: flex;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    width: 198px;
+    gap: var(--3sm);
+    padding-top: var(--2sm);
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+p.footer-title {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1.4px;
+    color: var(--gray-03);
+}
+
+.footer-image .nav-image-container{
+    width: 179px;
+    height: auto;
+}
+
+.fine-print {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+p.cc {
+    color: var(--gray-03);
+}
+
+a.pp {
+    text-decoration: underline;
 }

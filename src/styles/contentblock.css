@@ -9,8 +9,8 @@
 .section-header-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
-    margin-bottom: 3.5em;
+    gap: var(--2sm);
+    margin-bottom: var(--2md);
 }
 
 /* SECTION HEADER ALIGNMENT  */
@@ -109,7 +109,7 @@ h2.right, p.right {
 .column {
     display: flex;
     flex-direction: column;
-    gap: 3em;
+    gap: var(--3md);
 }
 
 .row {
@@ -128,13 +128,13 @@ h2.right, p.right {
 /* TO DO: get rid of button alignment class if we never use it  */
 .button-spacing {
     display: flex;
-    gap: 1em;
+    gap: var(--3sm);
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .button-spacing.extra-wide-spacing {
-    gap: 2.25em;
+    gap: var(--2sm) var(--2lg);
 }
 
 /* IMAGE CSS  */

@@ -1,10 +1,14 @@
 :root {
   --osc-brand-color: #008771;
   --osc-green-01: #DDF9F4;
+  --osc-green-02: #98ECDE;
+  --osc-green-03: #19B69C;
+  --osc-green-04: #008771;
   --osc-green-05: #004154;
   --osc-green-06: #015143;
   --osc-green-07: #003028;
   --body-text: #1C3A49;
+  --secondary-bg: #F0F6F9;
   --gray-01: #EFF7FB;
   --gray-02: #C4DAE3;
   --gray-03: #8AA0AA;
@@ -13,9 +17,23 @@
   --gray-06: #112E3D;
   --white: #FFFFFF;
   --black: #000;
-  --star-size: 1.5em;
+  --success: #04D2A1;
+  --error: #E81F5B;
+  --star-size: 24px;
   --star-color: #FCBD06;
   --star-background: #C4DAE3;
+  --4sm: 8px;
+  --3sm: 16px;
+  --2sm: 24px;
+  --sm: 32px;
+  --4md: 40px;
+  --3md: 48px;
+  --2md: 56px;
+  --md: 64px;
+  --4lg: 72px;
+  --3lg: 80px;
+  --2lg: 88px;
+  --lg: 96px;
 }
 
 /* TYPEOGRAPHY  */
@@ -36,7 +54,6 @@ body {
   font-family: 'Apertura, Regular';
   font-size: 16px;
   line-height: 150%;
-  color: var(--body-text);
 }
 
 .App {
@@ -103,10 +120,11 @@ p {
   line-height: 150%;
 }
 
-p.body-text {
+p.bodyText {
   font-family: 'Apertura, Regular';
   font-size: 1.25em;
   line-height: 150%;
+  color: var(--body-text);
 }
 
 p.allCaps {
