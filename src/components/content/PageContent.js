@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Page from "./Page.js";
-function PageContent({ content_data }) {
+function PageContent({ content_data, review_content }) {
   const pagesBlock = content_data.map((page, index) => {
     // Create Routes. Ensure that the home page has route "/"
     let route;
@@ -10,7 +10,11 @@ function PageContent({ content_data }) {
       route = `/${page.slug}`;
     }
     return (
-      <Route key={index} path={route} element={<Page page_data={page} />} />
+      <Route
+        key={index}
+        path={route}
+        element={<Page page_data={page} review_content={review_content} />}
+      />
     );
   });
   return (

@@ -110,10 +110,14 @@ h2.right, p.right {
 .column {
     display: flex;
     flex-direction: column;
-    gap: var(--3md);
+    height: 100%;
 }
 
-.column.quarter {
+.column.full {
+  gap: var(--3md);
+}
+
+.column.small {
     max-width: 276px;
     padding: var(--4md);
     gap: var(--sm);
@@ -122,6 +126,11 @@ h2.right, p.right {
 .row {
     display: flex;
     justify-content: center;
+}
+
+.row .edgesGap {
+  height: 100%;
+  flex-grow: 1;
 }
 
 .row._1 {
@@ -205,6 +214,10 @@ h2.right, p.right {
     color: var(--gray-05);
   }
 
+  p.lightGray {
+    color: var(--gray-04);
+  }
+
  p.mediumGreen {
     color: var(--osc-green-06);
   }
@@ -252,4 +265,145 @@ h2.right, p.right {
     font-size: 15px;
     text-align: left;
     padding: 0;
+  }
+
+  /* REVIEW BLOCK CONTAINER  */
+
+  .review-block-container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    gap: var(--md);
+  }
+
+  .review-block-container .left-block{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 588px;
+  }
+
+  .review-block-container .right-block{
+    text-align: left;
+    max-width: 588px;
+  }
+
+  .left-block p {
+    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: var(--2sm);
+  }
+
+  .left-block h2 {
+    max-width: 570px;
+  }
+    
+  .review-button-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-button-container h5 {
+    margin-top: 0.75em;
+    margin-bottom: 1.5em;
+    width: 19.2em;
+  }
+  
+  .right-block {
+    width: 35em;
+    position: relative;
+    margin-left: 2em;
+  }
+  
+  .testimonial-block {
+    background-color: var(--gray-01);
+    height: 100%;
+  }
+  
+  #testimonial {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2.5em;
+  }
+  
+  .testimonial {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  #testimonial p.review {
+    color: var(--gray-06);
+    margin-bottom: 1.5em;
+    max-height: 15em;
+    overflow: auto;
+    margin-top: 1.5em;
+  }
+  
+  #testimonial p.reviewName {
+    font-family: 'Apertura, Regular';
+    font-size: 1.25em;
+    font-weight: 450;
+    line-height: 140%;
+    color: var(--black);
+  }
+  
+  #testimonial p.allCaps {
+    color: var(--gray-04);
+  }
+  
+  .arrows {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    bottom: -2em;
+    right: 2em;
+    justify-content: space-between;
+  }
+
+  .arrows svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  button.back-arrow {
+    background-color: var(--white);
+    width: 3.5em;
+    height: 3.5em;
+    margin-right: 1em;
+  }
+  
+  button.front-arrow {
+    background-color: var(--osc-brand-color);
+    border-color: var(--osc-brand-color);
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  /* ACCOLADES  */
+
+  .image-wrapper.brand {
+    height: 45px;
+    padding: var(--3sm) var(--4md) 0 var(--4md);
+  }
+
+  .image-wrapper.brand img {
+    object-fit: contain;
+  }
+
+  .accolades-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }

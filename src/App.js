@@ -74,6 +74,7 @@ const app_data = gql`
               column {
                 columnHeader
                 columnWidth
+                columnAlignment
                 rows {
                   ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsText {
                     __typename
@@ -150,10 +151,39 @@ const app_data = gql`
                       text
                     }
                   }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsReviewBlock {
+                    buttonText
+                    buttonUrl
+                    reviewRequest
+                    subtitle
+                    title
+                  }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsAccoladesBlock {
+                    accolades {
+                      starRating
+                      brandLogo {
+                        node {
+                          altText
+                          mediaItemUrl
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           }
+        }
+      }
+    }
+    reviews {
+      nodes {
+        title
+        reviewFields {
+          dateOfReview
+          name
+          review
+          starRating
         }
       }
     }
@@ -184,7 +214,10 @@ function App() {
           <Router>
             <ScrollToTop />
             <NavBar menu_data={navItems} />
-            <PageContent content_data={data.pages.nodes} />
+            <PageContent
+              content_data={data.pages.nodes}
+              review_content={data.reviews.nodes}
+            />
             <Footer footerItems={footerItems} />
           </Router>
         </div>

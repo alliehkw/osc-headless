@@ -1,6 +1,6 @@
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
-function Page({ page_data }) {
+function Page({ page_data, review_content }) {
   // Seperate out data to conditionally render heros and content sections if they exist
   let hero_data = [];
   let content_blocks = [];
@@ -33,7 +33,10 @@ function Page({ page_data }) {
     pageContent = content_blocks.map((content, index) => {
       return (
         <div key={index}>
-          <ContentBlock content_data={content} />
+          <ContentBlock
+            content_data={content}
+            review_content={review_content}
+          />
         </div>
       );
     });
