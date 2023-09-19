@@ -104,10 +104,10 @@ function Column({ column_data, numberOfColumns, review_content }) {
   });
   return (
     <div
-      className={`column ${column_data.columnWidth[0]}`}
+      className={`column ${column_data.columnWidth[0]} _${numberOfColumns}`}
       id={`${column_data.columnAlignment}`}
     >
-      {column_data.columnHeader ? <h2>{column_data.columnHeader}</h2> : null}
+      {column_data.columnHeader ? <h3>{column_data.columnHeader}</h3> : null}
       {rows}
     </div>
   );

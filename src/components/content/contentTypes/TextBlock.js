@@ -1,4 +1,5 @@
 function TextBlock({ text_data, numberOfColumns }) {
+  console.log("text_data.textContent", text_data.textContent);
   return (
     <div
       className={

@@ -105,6 +105,7 @@ h2.right, p.right {
     display: flex;
     width: 100%;
     justify-content: center;
+    max-width: 1440px;
 }
 
 .column {
@@ -135,6 +136,11 @@ h2.right, p.right {
 
 .row._1 {
     max-width: 791px;
+}
+
+.column.small._2 {
+  max-width: 480px;
+  padding: 0;
 }
 
 .row.full-width {
@@ -222,9 +228,10 @@ h2.right, p.right {
     color: var(--osc-green-06);
   }
 
-  p.bodyText {
+  /* redundant  */
+  /* p.bodyText {
     color: var(--body-text);
-  }
+  } */
 
   p.darkGreen {
     color: var(--osc-green-07);
@@ -406,4 +413,8 @@ h2.right, p.right {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  #left {
+    text-align: left;
   }
