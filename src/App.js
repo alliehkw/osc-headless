@@ -169,6 +169,25 @@ const app_data = gql`
                       }
                     }
                   }
+                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsColumnSplit {
+                    leftSideContentType
+                    leftSideText
+                    rightSideContentType
+                    rightSideText
+                    whichSideIsLarger
+                    rightSideImage {
+                      node {
+                        altText
+                        mediaItemUrl
+                      }
+                    }
+                    leftSideImage {
+                      node {
+                        altText
+                        mediaItemUrl
+                      }
+                    }
+                  }
                 }
               }
             }

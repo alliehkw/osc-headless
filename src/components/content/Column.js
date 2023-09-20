@@ -6,6 +6,7 @@ import MediaCard from "./contentTypes/MediaCard.js";
 import MapBlock from "./contentTypes/MapBlock.js";
 import ReviewBlockRotator from "./contentTypes/ReviewBlockRotator.js";
 import Accolades from "./contentTypes/Accolades.js";
+import ColumnSplit from "./contentTypes/ColumnSplit.js";
 
 function Column({ column_data, numberOfColumns, review_content }) {
   const rows = column_data.rows.map((row, index) => {
@@ -98,6 +99,19 @@ function Column({ column_data, numberOfColumns, review_content }) {
       return (
         <div className="row" key={index}>
           <Accolades accolade_data={row} numberOfColumns={numberOfColumns} />
+        </div>
+      );
+    }
+    if (
+      row.__typename ===
+      "FlexibleContentCustomContentBlocksContentSectionColumnRowsColumnSplit"
+    ) {
+      return (
+        <div className="row" key={index}>
+          <ColumnSplit
+            column_split_data={row}
+            numberOfColumns={numberOfColumns}
+          />
         </div>
       );
     }

@@ -5,14 +5,14 @@ function ImageBlock({
   gapBetweenImages,
 }) {
   const imageBlock = image_data.images.map((image, index) => {
-    console.log(image);
+    console.log("image.overlay", image.imageOverlay);
     // TO DO: dynamically render the shadow based on the position of the overlay
     let height = image.imageHeight;
     let width = image.imageWidth;
     let borderRadius = image.imageBorder;
     return (
       <div key={index}>
-        {image.imageOverlay ? (
+        {!image.imageOverlay ? (
           <div
             className="image-wrapper"
             style={{
