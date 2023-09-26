@@ -1,5 +1,6 @@
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
+
 function Page({ page_data, review_content }) {
   // Seperate out data to conditionally render heros and content sections if they exist
   let hero_data = [];
