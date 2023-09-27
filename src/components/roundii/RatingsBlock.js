@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 function RatingsBlock() {
   const theme = useTheme();
   return (
-    <Grid item sm={12} md={12} lg={4} xl={4}>
+    <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
       <Box
         sx={{
           display: "flex",

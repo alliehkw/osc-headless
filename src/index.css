@@ -59,8 +59,8 @@ body {
 
 /* Large desktop  */
 @media (min-width: 1280px) {
-  .content {
-    padding: 0 120px;
+  .section {
+    padding: var(--lg) 120px;
   }
   p {
     font-size: 20px;
@@ -71,13 +71,14 @@ body {
   }
   h2 {
     font-size: 48px;
+    margin-bottom: var(--2md);
   }
 }
 
 /* Small desktop  */
 @media (max-width: 1279px) {
-  .content {
-    padding: 0 60px;
+  .section {
+    padding: var(--lg) 60px;
   }
   p {
     font-size: 20px;
@@ -88,13 +89,14 @@ body {
   }
   h2 {
     font-size: 48px;
+    margin-bottom: var(--2md);
   }
 }
 
 /* Tablet  */
 @media (max-width: 1023px) {
-  .content {
-    padding: 0 32px;
+  .section {
+    padding: var(--2md) var(--sm);
   }
   p {
     font-size: 18px;
@@ -105,13 +107,14 @@ body {
   }
   h2 {
     font-size: 36px;
+    margin-bottom: var(--2md);
   }
 }
 
 /* Mobile  */
-@media (max-width: 414px) {
-  .content {
-    padding: 0 20px;
+@media (max-width: 600px) {
+  .section {
+    padding: var(--3md) 20px;
   }
   p {
     font-size: 16px;
@@ -122,9 +125,12 @@ body {
   }
   h2 {
     font-size: 30px;
+    margin-bottom: var(--4md);
+  }
+  button {
+    width: 100%;
   }
 }
-
 
 .App {
   background-color: var(--white);
@@ -146,7 +152,7 @@ h2 {
   font-family: 'Petersburg, Regular';
   font-style: normal;
   font-weight: 400;
-  margin: 0;
+  /* margin: 0; */
 }
 
 h3 {
@@ -232,7 +238,7 @@ button {
   padding-bottom: 1em;
 }
 
-/* button.green {
+button.green {
   background-color: var(--osc-brand-color);
   border-color: var(--osc-brand-color);
   color: var(--white);
@@ -249,7 +255,7 @@ button.transparent {
   color: var(--osc-brand-color);
   border-color: transparent;
   text-wrap: nowrap;
-} */
+}
 
 .stars {
   --percent: calc(var(--stars)/5 * 100%);

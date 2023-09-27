@@ -270,18 +270,16 @@ function App() {
     <ThemeProvider theme={theme}>
       {!loading ? (
         <div className="App">
-          <div className="section">
-            <Router>
-              <ScrollToTop />
-              <Home />
-              {/* <NavBar menu_data={navItems} />
+          <Router>
+            <ScrollToTop />
+            <Home />
+            {/* <NavBar menu_data={navItems} />
             <PageContent
               content_data={data.pages.nodes}
               review_content={data.reviews.nodes}
             />
             <Footer footerItems={footerItems} /> */}
-            </Router>
-          </div>
+          </Router>
         </div>
       ) : null}
     </ThemeProvider>
