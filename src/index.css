@@ -160,6 +160,9 @@ p.allCaps {
   .video {
     height: 824px;
   }
+  .play {
+    margin-top: 288px;
+  }
   p {
     font-size: 20px;
     line-height: 150%;
@@ -190,6 +193,9 @@ p.allCaps {
   .video {
     height: 824px;
   }
+  .play {
+    margin-top: 288px;
+  }
   p {
     font-size: 20px;
     line-height: 150%;
@@ -210,13 +216,17 @@ p.allCaps {
 @media (max-width: 1023px) {
   .section {
     padding: var(--2md) var(--sm);
-    background-color: red;
   }
   .short, .tall {
     height: 400px;
   }
   .video {
     height: 472px;
+  }
+  .play {
+    height: 64px;
+    width: 64px;
+    margin-top: 288px;
   }
   p {
     font-size: 18px;
@@ -238,13 +248,17 @@ p.allCaps {
 @media (max-width: 600px) {
   .section {
     padding: var(--3md) var(--2md);
-    background-color: blue;
   }
   .short, .tall {
     height: 350px;
   }
   .video {
     height: 472px;
+  }
+  .play {
+    height: 64px;
+    width: 64px;
+    margin-top: 320px;
   }
   p {
     font-size: 16px;
@@ -329,3 +343,4 @@ button.transparent {
     -webkit-text-fill-color: transparent;
   }
 }
+

@@ -5,6 +5,7 @@ function DownCarrot({ className }) {
       viewBox="0 0 17 16"
       fill="none"
       className={className}
+      id="downcarrot"
     >
       <g clipPath="url(#clip0_742_100)">
         <path

@@ -132,7 +132,7 @@ button.nav-button {
     color: var(--white);
 }
 
-svg {
+svg#downcarrot {
     width: var(--3sm);
     height: var(--3sm);
 }
