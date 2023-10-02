@@ -1,39 +1,30 @@
-import Column from "./Column.js";
-import "../../styles/contentblock.css";
+import { Box } from "@mui/material";
+// import { useTheme } from "@mui/material/styles";
+import OneColumn from "./OneColumn.js";
 
 function ContentBlock({ content_data, review_content }) {
-  const columns = content_data.column;
-  let contentColumns = columns.map((column, index) => {
-    return (
-      <div key={index}>
-        <Column
-          column_data={column}
-          numberOfColumns={columns.length}
-          review_content={review_content}
-        />
-      </div>
-    );
+  // const theme = useTheme();
+  // console.log("content_data", content_data);
+  const columnBlocks = content_data.columnBlocks;
+  console.log("columnBlocks", columnBlocks);
+  let contentColumns = columnBlocks.map((column, index) => {
+    // TO DO: handle other column block types!!
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn"
+    ) {
+      return (
+        <div key={index}>
+          <OneColumn column_data={column.oneColumn} />
+        </div>
+      );
+    }
   });
   return (
-    <div className={`content-block ${content_data.backgroundColor} `}>
-      {content_data.sectionHeader || content_data.sectionSubtext ? (
-        <div
-          className={`section-header-container ${content_data.headerAlignment}`}
-        >
-          {content_data.sectionHeader ? (
-            <h2 className={`${content_data.headerWidth}`}>
-              {content_data.sectionHeader}
-            </h2>
-          ) : null}
-          {content_data.sectionSubtext ? (
-            <p className={`body-text ${content_data.headerWidth}`}>
-              {content_data.sectionSubtext}
-            </p>
-          ) : null}
-        </div>
-      ) : null}
-      <div className="columns">{contentColumns}</div>
-    </div>
+    // TO DO: add in custom padding dynamically !!
+    <Box className={`section ${content_data.backgroundColor[0]}`}>
+      {contentColumns}
+    </Box>
   );
 }
 

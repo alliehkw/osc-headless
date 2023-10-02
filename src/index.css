@@ -64,8 +64,11 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+
+.tall, .short, .video {
+  align-items: center;
 }
 
 h1 {
@@ -247,7 +250,7 @@ p.allCaps {
 /* Mobile  */
 @media (max-width: 600px) {
   .section {
-    padding: var(--3md) var(--2md);
+    padding: var(--3md) 20px;
   }
   .short, .tall {
     height: 350px;
@@ -296,18 +299,15 @@ a {
  } */
 
 button {
-  font-size: 0.9375em;
-  line-height: 106.667%;
+  font-size: 15px;
+  vertical-align: middle;
   font-family: 'Apertura, Regular';
   letter-spacing: 0.046875em;
   text-transform: uppercase;
   font-weight: 450;
   border-radius: 0.125em;
   border: solid 0.0625em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 12px var(--3sm);
 }
 
 button.green {
@@ -342,5 +342,23 @@ button.transparent {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+/* COLORS  */
+
+.lightblue {
+  background-color: var(--gray-01);
+  color: var(--gray-06);
+  height: 300px;
+}
+
+.white {
+  background-color: var(--white);
+  color: var(--gray-06);
+}
+
+.lightgreen {
+  background-color: var(--osc-green-01);
+  color: var(--osc-green-06);
 }
 

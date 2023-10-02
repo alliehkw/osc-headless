@@ -5,7 +5,6 @@ function ImageBlock({
   gapBetweenImages,
 }) {
   const imageBlock = image_data.images.map((image, index) => {
-    console.log("image.overlay", image.imageOverlay);
     // TO DO: dynamically render the shadow based on the position of the overlay
     let height = image.imageHeight;
     let width = image.imageWidth;

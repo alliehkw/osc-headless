@@ -7,7 +7,6 @@ function ColumnSplit({ column_split_data }) {
   } else {
     rightClass = rightClass + " larger";
   }
-  //   console.log(column_split_data);
   return (
     <div className="column-split">
       <div className={leftClass}>

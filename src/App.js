@@ -5,7 +5,7 @@ import PageContent from "./components/content/PageContent.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ScrollToTop from "./components/reusables/ScrollToTop.js";
-import Home from "./components/roundii/Home.js";
+// import Home from "./components/roundii/Home.js";
 import { ThemeProvider, createTheme } from "@mui/system";
 
 // TO DO: update tags to be a tags for accessibility where necessary
@@ -64,6 +64,34 @@ const app_data = gql`
                   altText
                   mediaItemUrl
                 }
+              }
+            }
+            ... on FlexibleContentCustomContentBlocksSection {
+              backgroundColor
+              columnBlocks {
+                ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {
+                  oneColumn {
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {
+                      fieldGroupName
+                      textAlignment
+                      customPadding {
+                        paddingBottom
+                        paddingLeft
+                        paddingRight
+                        paddingTop
+                      }
+                      title
+                      titleSize
+                      titleWidth
+                    }
+                  }
+                }
+              }
+              customPadding {
+                paddingBottom
+                paddingLeft
+                paddingRight
+                paddingTop
               }
             }
           }

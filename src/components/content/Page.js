@@ -13,7 +13,7 @@ function Page({ page_data, review_content }) {
       if (block.__typename === "FlexibleContentCustomContentBlocksHero") {
         hero_data.push(block);
       } else if (
-        block.__typename === "FlexibleContentCustomContentBlocksContentSection"
+        block.__typename === "FlexibleContentCustomContentBlocksSection"
       ) {
         content_blocks.push(block);
       }
@@ -34,10 +34,10 @@ function Page({ page_data, review_content }) {
     pageContent = content_blocks.map((content, index) => {
       return (
         <div key={index}>
-          {/* <ContentBlock
+          <ContentBlock
             content_data={content}
             review_content={review_content}
-          /> */}
+          />
         </div>
       );
     });

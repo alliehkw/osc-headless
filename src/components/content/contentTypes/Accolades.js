@@ -1,6 +1,5 @@
 function Accolades({ accolade_data }) {
   const accoladeBlock = accolade_data.accolades.map((accolade, index) => {
-    console.log(accolade);
     return (
       <div className="accolade" key={index}>
         <div
