@@ -5,7 +5,7 @@ function CentralColumn({}) {
   return (
     <>
       <Grid container>
-        <Grid item xs={12} sm={12} md={12} lg={8} xl={8} sx={{ mx: "auto" }}>
+        <Grid item lg={8} xl={8} sx={{ mx: "auto" }}>
           <p styles={{ color: theme.palette.bodyText }}>
             Orthopaedic Specialty Clinic of Spokane aims to provide the absolute
             highest-quality orthopaedic care in the Inland Northwest. We

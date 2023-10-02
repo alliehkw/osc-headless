@@ -1,7 +1,7 @@
 // import React, { useEffect, useState } from "react";
-// import NavBar from "./components/navbar/NavBar.js";
-// import Footer from "./components/footer/Footer.js";
-// import PageContent from "./components/content/PageContent.js";
+import NavBar from "./components/navbar/NavBar.js";
+import Footer from "./components/footer/Footer.js";
+import PageContent from "./components/content/PageContent.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ScrollToTop from "./components/reusables/ScrollToTop.js";
@@ -52,145 +52,17 @@ const app_data = gql`
         flexibleContent {
           customContentBlocks {
             ... on FlexibleContentCustomContentBlocksHero {
-              __typename
-              backgroundColor
-              height
+              heroHeight
               heroType
-              subTitle
-              title
-              forceOneLineTitle
               videoUrl
-              videoPoster {
+              titleWidth
+              title
+              textColor
+              subtitle
+              posterImage {
                 node {
                   altText
                   mediaItemUrl
-                }
-              }
-            }
-            ... on FlexibleContentCustomContentBlocksContentSection {
-              __typename
-              backgroundColor
-              sectionHeader
-              headerWidth
-              headerAlignment
-              sectionSubtext
-              column {
-                columnHeader
-                columnWidth
-                columnAlignment
-                rows {
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsText {
-                    __typename
-                    textColor
-                    textContent
-                    fullWidth
-                    textBackground
-                    textBackgroundColor
-                    textBackgroundShape
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsButtons {
-                    buttonsAlignment
-                    fullWidth
-                    extraWideSpaceBetweenButtons
-                    button {
-                      buttonBackgroundColor
-                      buttonLinkUrl
-                      buttonText
-                    }
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsImages {
-                    fullWidth
-                    imageAlignment
-                    gapBetweenImages
-                    images {
-                      imageBorder
-                      imageHeight
-                      imageWidth
-                      imageType
-                      image {
-                        node {
-                          altText
-                          mediaItemUrl
-                        }
-                      }
-                      imageOverlay {
-                        contentType
-                        icon
-                        overlayIsALink
-                        overlayLink
-                        overlayPosition
-                        shadowUnderOverlay
-                        text
-                        backgroundColor
-                      }
-                    }
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsMap {
-                    address
-                    fullWidth
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsMediaCard {
-                    title
-                    content
-                    buttonUrl
-                    imageBorderRadius
-                    imageHeight
-                    imageType
-                    imageWidth
-                    image {
-                      node {
-                        altText
-                        mediaItemUrl
-                      }
-                    }
-                    overlay {
-                      backgroundColor
-                      contentType
-                      icon
-                      overlayIsALink
-                      overlayLink
-                      overlayPosition
-                      shadowUnderOverlay
-                      text
-                    }
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsReviewBlock {
-                    buttonText
-                    buttonUrl
-                    reviewRequest
-                    subtitle
-                    title
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsAccoladesBlock {
-                    accolades {
-                      starRating
-                      brandLogo {
-                        node {
-                          altText
-                          mediaItemUrl
-                        }
-                      }
-                    }
-                  }
-                  ... on FlexibleContentCustomContentBlocksContentSectionColumnRowsColumnSplit {
-                    leftSideContentType
-                    leftSideText
-                    rightSideContentType
-                    rightSideText
-                    whichSideIsLarger
-                    rightSideImage {
-                      node {
-                        altText
-                        mediaItemUrl
-                      }
-                    }
-                    leftSideImage {
-                      node {
-                        altText
-                        mediaItemUrl
-                      }
-                    }
-                  }
                 }
               }
             }
@@ -253,32 +125,32 @@ function App() {
   const { loading, error, data } = useQuery(app_data);
   // TO DO: error handling
   // TO DO: dynamically create pages
-  // let navItems = [];
-  // let footerItems = [];
-  // if (!loading) {
-  //   for (let item of data.menuItems.nodes) {
-  //     let navLocations = item.locations;
-  //     if (navLocations.includes("PRIMARY")) {
-  //       navItems.push(item);
-  //     }
-  //     if (navLocations.includes("FOOTER")) {
-  //       footerItems.push(item);
-  //     }
-  //   }
-  // }
+  let navItems = [];
+  let footerItems = [];
+  if (!loading) {
+    for (let item of data.menuItems.nodes) {
+      let navLocations = item.locations;
+      if (navLocations.includes("PRIMARY")) {
+        navItems.push(item);
+      }
+      if (navLocations.includes("FOOTER")) {
+        footerItems.push(item);
+      }
+    }
+  }
   return (
     <ThemeProvider theme={theme}>
       {!loading ? (
         <div className="App">
           <Router>
             <ScrollToTop />
-            <Home />
-            {/* <NavBar menu_data={navItems} />
+            <NavBar menu_data={navItems} />
+            {/* <Home /> */}
             <PageContent
               content_data={data.pages.nodes}
-              review_content={data.reviews.nodes}
+              // review_content={data.reviews.nodes}
             />
-            <Footer footerItems={footerItems} /> */}
+            {/* <Footer footerItems={footerItems} /> */}
           </Router>
         </div>
       ) : null}

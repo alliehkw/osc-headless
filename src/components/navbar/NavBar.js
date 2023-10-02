@@ -25,7 +25,7 @@ function NavBar({ menu_data }) {
     }
     setMenuItems(menuItemsArray);
     setDropDowns(dropDownsObj);
-  }, []);
+  }, [menu_data]);
 
   // Create an object to track whether the drop downs are visible or not
   useEffect(() => {
@@ -37,7 +37,7 @@ function NavBar({ menu_data }) {
       }
     });
     setDropDownVisible(updatedDropDownVisible);
-  }, [menuItems]);
+  }, [menuItems, dropDowns]);
 
   // Change navbar color state based on scroll location
   const changeNavbar = () => {

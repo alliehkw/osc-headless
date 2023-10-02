@@ -34,10 +34,10 @@ function Page({ page_data, review_content }) {
     pageContent = content_blocks.map((content, index) => {
       return (
         <div key={index}>
-          <ContentBlock
+          {/* <ContentBlock
             content_data={content}
             review_content={review_content}
-          />
+          /> */}
         </div>
       );
     });
