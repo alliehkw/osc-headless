@@ -3,6 +3,7 @@ import RichText from "./contentTypes/RichText.js";
 import Buttons from "./contentTypes/Buttons.js";
 import Image from "./contentTypes/Image.js";
 import Video from "./contentTypes/Video.js";
+import Accolades from "./contentTypes/Accolades.js";
 
 function OneColumn({ column_data, class_data, screenSize }) {
   let columns = column_data.map((column, index) => {
@@ -53,6 +54,16 @@ function OneColumn({ column_data, class_data, screenSize }) {
       return (
         <div key={index}>
           <Video video_data={column} screenSize={screenSize} />
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnAccolades"
+    ) {
+      return (
+        <div key={index}>
+          <Accolades accolade_data={column} screenSize={screenSize} />
         </div>
       );
     }

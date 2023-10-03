@@ -161,6 +161,18 @@ const app_data = gql`
                         }
                       }
                     }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnAccolades {
+                      blockWidth
+                      accolade {
+                        starRating
+                        brandImage {
+                          node {
+                            altText
+                            mediaItemUrl
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
