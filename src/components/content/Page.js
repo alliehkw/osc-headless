@@ -1,7 +1,7 @@
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
 
-function Page({ page_data, review_content }) {
+function Page({ page_data, review_content, screenSize }) {
   // Seperate out data to conditionally render heros and content sections if they exist
   let hero_data = [];
   let content_blocks = [];
@@ -29,7 +29,6 @@ function Page({ page_data, review_content }) {
       );
     });
   }
-  // console.log("content_blocks", content_blocks);
   // Loop through content blocks to pass them all onto the page
   if (content_blocks.length > 0) {
     pageContent = content_blocks.map((content, index) => {
@@ -38,6 +37,7 @@ function Page({ page_data, review_content }) {
           <ContentBlock
             content_data={content}
             review_content={review_content}
+            screenSize={screenSize}
           />
         </div>
       );

@@ -6,6 +6,8 @@ import Play from "../../icons/Play.js";
 import { useState } from "react";
 
 function Hero({ hero_data }) {
+  let paddingDetails = hero_data.customPaddingDetails;
+
   const [playing, setPlaying] = useState(false);
   const [display, setDisplay] = useState("block");
   const theme = useTheme();
@@ -19,16 +21,28 @@ function Hero({ hero_data }) {
     <>
       {hero_data.heroType === "video" ? (
         <Box
-          className="section video"
+          className="section video hero"
           sx={{
             position: "relative",
             color: theme.palette[hero_data.textColor[0]],
+            ...(hero_data.customPadding && {
+              paddingTop: `${paddingDetails.paddingTop}px`,
+              paddingBottom: `${paddingDetails.paddingBottom}px`,
+              paddingLeft: `${paddingDetails.paddingLeft}px`,
+              paddingRight: `${paddingDetails.paddingRight}px`,
+            }),
           }}
         >
           <Box
             sx={{
               position: "absolute",
               height: "100%",
+              ...(hero_data.customPadding && {
+                paddingTop: `${paddingDetails.paddingTop}px`,
+                paddingBottom: `${paddingDetails.paddingBottom}px`,
+                paddingLeft: `${paddingDetails.paddingLeft}px`,
+                paddingRight: `${paddingDetails.paddingRight}px`,
+              }),
             }}
           >
             <ReactPlayer

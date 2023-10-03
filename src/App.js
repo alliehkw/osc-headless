@@ -7,6 +7,7 @@ import { useQuery, gql } from "@apollo/client";
 import ScrollToTop from "./components/reusables/ScrollToTop.js";
 // import Home from "./components/roundii/Home.js";
 import { ThemeProvider, createTheme } from "@mui/system";
+import React, { useState, useEffect } from "react";
 
 // TO DO: update tags to be a tags for accessibility where necessary
 const app_data = gql`
@@ -67,6 +68,7 @@ const app_data = gql`
               }
             }
             ... on FlexibleContentCustomContentBlocksSection {
+              gap
               backgroundColor
               columnBlocks {
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {
@@ -86,15 +88,77 @@ const app_data = gql`
                       titleWidth
                     }
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnRichText {
-                      customPadding
                       richTextWidth
                       fieldGroupName
+                      columnAlignment
                       textContent
+                      customPadding
                       customPaddingDetails {
                         paddingBottom
                         paddingLeft
                         paddingRight
                         paddingTop
+                      }
+                    }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnButtons {
+                      blockAlign
+                      fieldGroupName
+                      blockWidth
+                      buttonPadding
+                      button {
+                        buttonBackgroundColor
+                        buttonText
+                        linkType
+                        url
+                        pageLink {
+                          node {
+                            slug
+                          }
+                        }
+                        document {
+                          nodes {
+                            mediaItemUrl
+                          }
+                        }
+                      }
+                    }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnImage {
+                      customImageHeight
+                      imageAlignment
+                      imageWidth
+                      image {
+                        node {
+                          altText
+                          mediaItemUrl
+                        }
+                      }
+                      imageHeightDimensions {
+                        desktopHeight
+                        mobileHeight
+                        tabletHeight
+                      }
+                      customPadding
+                      customPaddingDetails {
+                        paddingBottom
+                        paddingLeft
+                        paddingRight
+                        paddingTop
+                      }
+                    }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnVideo {
+                      videoAlignment
+                      videoUrl
+                      videoWidth
+                      customVideoDimensions
+                      videoHeightDimensions {
+                        desktopHeight
+                        mobileHeight
+                        tabletHeight
+                      }
+                      posterImage {
+                        node {
+                          mediaItemUrl
+                        }
                       }
                     }
                   }
@@ -173,6 +237,23 @@ function App() {
       }
     }
   }
+  // Get the screen size
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+    };
+  }
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+    };
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenSize]);
   return (
     <ThemeProvider theme={theme}>
       {!loading ? (
@@ -183,6 +264,7 @@ function App() {
             {/* <Home /> */}
             <PageContent
               content_data={data.pages.nodes}
+              screenSize={screenSize}
               // review_content={data.reviews.nodes}
             />
             {/* <Footer footerItems={footerItems} /> */}

@@ -1,7 +1,6 @@
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
 function RichText({ rich_text_data }) {
-  console.log("rich_text_data", rich_text_data);
   let paddingDetails = rich_text_data.customPaddingDetails;
 
   let richTextWidth;
@@ -30,7 +29,7 @@ function RichText({ rich_text_data }) {
         lg={richTextWidth}
         xl={richTextWidth}
         sx={{
-          mx: rich_text_data.textAlignment === "center" ? "auto" : "0",
+          mx: rich_text_data.columnAlignment === "center" ? "auto" : "0",
           ...(rich_text_data.customPadding && {
             paddingTop: `${paddingDetails.paddingTop}px`,
             paddingBottom: `${paddingDetails.paddingBottom}px`,

@@ -1,8 +1,10 @@
 import Title from "./contentTypes/Title.js";
 import RichText from "./contentTypes/RichText.js";
+import Buttons from "./contentTypes/Buttons.js";
+import Image from "./contentTypes/Image.js";
+import Video from "./contentTypes/Video.js";
 
-function OneColumn({ column_data }) {
-  //   console.log("column_data", column_data);
+function OneColumn({ column_data, class_data, screenSize }) {
   let columns = column_data.map((column, index) => {
     if (
       column.__typename ===
@@ -24,9 +26,39 @@ function OneColumn({ column_data }) {
         </div>
       );
     }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnButtons"
+    ) {
+      return (
+        <div key={index}>
+          <Buttons buttons_data={column} />
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnImage"
+    ) {
+      return (
+        <div key={index}>
+          <Image image_data={column} screenSize={screenSize} />
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnVideo"
+    ) {
+      return (
+        <div key={index}>
+          <Video video_data={column} screenSize={screenSize} />
+        </div>
+      );
+    }
   });
 
-  return <div className="OneColumn">{columns}</div>;
+  return <div className={`OneColumn ${class_data}`}>{columns}</div>;
 }
 
 export default OneColumn;

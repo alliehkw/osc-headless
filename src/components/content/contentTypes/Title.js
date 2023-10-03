@@ -1,9 +1,8 @@
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
 function Title({ title_data }) {
   let titleElement;
   let paddingDetails = title_data.customPaddingDetails;
-  console.log("title_data", title_data);
 
   let titleWidth;
   switch (title_data.titleWidth[0]) {
