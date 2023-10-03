@@ -29,6 +29,7 @@ function Page({ page_data, review_content }) {
       );
     });
   }
+  // console.log("content_blocks", content_blocks);
   // Loop through content blocks to pass them all onto the page
   if (content_blocks.length > 0) {
     pageContent = content_blocks.map((content, index) => {

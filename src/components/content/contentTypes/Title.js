@@ -2,6 +2,7 @@ import { Grid, Box } from "@mui/material";
 
 function Title({ title_data }) {
   let titleElement;
+  let paddingDetails = title_data.customPaddingDetails;
   console.log("title_data", title_data);
 
   let titleWidth;
@@ -23,54 +24,20 @@ function Title({ title_data }) {
   switch (title_data.titleSize[0]) {
     case "h1":
       titleElement = (
-        <Grid
-          item
-          xs={12}
-          sm={titleWidth}
-          md={titleWidth}
-          lg={titleWidth}
-          xl={titleWidth}
-          sx={{ mx: "auto" }}
-        >
-          <h1 styles={{ textAlignment: title_data.textAlignment }}>
-            {title_data.title}
-          </h1>
-        </Grid>
+        <h1 styles={{ textAlignment: title_data.textAlignment }}>
+          {title_data.title}
+        </h1>
       );
       break;
     case "h2":
       titleElement = (
-        <Grid
-          item
-          xs={12}
-          sm={titleWidth}
-          md={titleWidth}
-          lg={titleWidth}
-          xl={titleWidth}
-          sx={{ mx: "auto" }}
-        >
-          <h2 styles={{ textAlignment: title_data.textAlignment }}>
-            {title_data.title}
-          </h2>
-        </Grid>
+        <h2 styles={{ textAlignment: title_data.textAlignment }}>
+          {title_data.title}
+        </h2>
       );
       break;
     default:
-      titleElement = (
-        <Grid
-          item
-          xs={12}
-          sm={titleWidth}
-          md={titleWidth}
-          lg={titleWidth}
-          xl={titleWidth}
-          sx={{
-            mx: "auto",
-          }}
-        >
-          <h3>{title_data.title}</h3>
-        </Grid>
-      );
+      titleElement = <h3>{title_data.title}</h3>;
   }
 
   return (
@@ -80,7 +47,25 @@ function Title({ title_data }) {
         textAlign: `${title_data.textAlignment}`,
       }}
     >
-      {titleElement}
+      <Grid
+        item
+        xs={12}
+        sm={titleWidth}
+        md={titleWidth}
+        lg={titleWidth}
+        xl={titleWidth}
+        sx={{
+          mx: title_data.textAlignment === "center" ? "auto" : "0",
+          ...(title_data.customPadding && {
+            paddingTop: `${paddingDetails.paddingTop}px`,
+            paddingBottom: `${paddingDetails.paddingBottom}px`,
+            paddingLeft: `${paddingDetails.paddingLeft}px`,
+            paddingRight: `${paddingDetails.paddingRight}px`,
+          }),
+        }}
+      >
+        {titleElement}
+      </Grid>
     </Grid>
   );
 }

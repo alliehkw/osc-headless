@@ -74,7 +74,8 @@ const app_data = gql`
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {
                       fieldGroupName
                       textAlignment
-                      customPadding {
+                      customPadding
+                      customPaddingDetails {
                         paddingBottom
                         paddingLeft
                         paddingRight
@@ -84,14 +85,20 @@ const app_data = gql`
                       titleSize
                       titleWidth
                     }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnRichText {
+                      customPadding
+                      richTextWidth
+                      fieldGroupName
+                      textContent
+                      customPaddingDetails {
+                        paddingBottom
+                        paddingLeft
+                        paddingRight
+                        paddingTop
+                      }
+                    }
                   }
                 }
-              }
-              customPadding {
-                paddingBottom
-                paddingLeft
-                paddingRight
-                paddingTop
               }
             }
           }

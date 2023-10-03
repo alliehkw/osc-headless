@@ -86,7 +86,7 @@ h2 {
   font-family: 'Petersburg, Regular';
   font-style: normal;
   font-weight: 400;
-  /* margin: 0; */
+  margin: 0;
 }
 
 h3 {
@@ -127,19 +127,6 @@ p {
   font-family: 'Apertura, Regular';
 }
 
-/* p.bodyText {
-  font-family: 'Apertura, Regular';
-  font-size: 20px;
-  line-height: 150%;
-  color: var(--body-text);
-} */
-
-p.bodyText a {
-  font-family: 'Apertura, Regular';
-  font-size: 20px;
-  line-height: 150%;
-}
-
 p.allCaps {
   font-size: 0.875em;
   line-height: 142.857%;
@@ -173,12 +160,17 @@ p.allCaps {
   p.ratings-block-text {
     max-width: 276px;
   }
-  h2 {
-    font-size: 48px;
-    margin-bottom: var(--2md);
+  p.bodyText {
+    font-family: 'Apertura, Regular';
+    font-size: 20px;
+    line-height: 150%;
   }
   h1 {
     font-size: 64px;
+  }
+  h2 {
+    font-size: 48px;
+    margin-bottom: var(--2sm);
   }
 }
 
@@ -206,12 +198,17 @@ p.allCaps {
   p.ratings-block-text {
     max-width: 276px;
   }
+  p.bodyText {
+    font-family: 'Apertura, Regular';
+    font-size: 20px;
+    line-height: 150%;
+  }
   h1 {
     font-size: 64px;
   }
   h2 {
     font-size: 48px;
-    margin-bottom: var(--2md);
+    margin-bottom: var(--2sm);
   }
 }
 
@@ -238,12 +235,17 @@ p.allCaps {
   p.ratings-block-text {
     max-width: 500px;
   }
+  p.bodyText {
+    font-family: 'Apertura, Regular';
+    font-size: 16px;
+    line-height: 150%;
+  }
   h1 {
     font-size: 48px;
   }
   h2 {
     font-size: 36px;
-    margin-bottom: var(--2md);
+    margin-bottom: var(--2sm);
   }
 }
 
@@ -270,12 +272,17 @@ p.allCaps {
   p.ratings-block-text {
     max-width: 287px;
   }
+  p.bodyText {
+    font-family: 'Apertura, Regular';
+    font-size: 16px;
+    line-height: 150%;
+  }
   h1 {
     font-size: 36px;
   }
   h2 {
     font-size: 30px;
-    margin-bottom: var(--4md);
+    margin-bottom: var(--2sm);
   }
   button {
     width: 100%;
@@ -349,7 +356,10 @@ button.transparent {
 .lightblue {
   background-color: var(--gray-01);
   color: var(--gray-06);
-  height: 300px;
+}
+
+.lightblue a {
+  color: var(--osc-green-04);
 }
 
 .white {
@@ -357,8 +367,19 @@ button.transparent {
   color: var(--gray-06);
 }
 
+.white a {
+  color: var(--osc-green-04);
+}
+
 .lightgreen {
   background-color: var(--osc-green-01);
   color: var(--osc-green-06);
 }
 
+.lightgreen h3 {
+  color: var(--osc-green-07);
+}
+
+li {
+  margin: 20px;
+}

@@ -6,7 +6,7 @@ function ContentBlock({ content_data, review_content }) {
   // const theme = useTheme();
   // console.log("content_data", content_data);
   const columnBlocks = content_data.columnBlocks;
-  console.log("columnBlocks", columnBlocks);
+  // console.log("content_data", content_data);
   let contentColumns = columnBlocks.map((column, index) => {
     // TO DO: handle other column block types!!
     if (
