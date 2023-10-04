@@ -198,6 +198,9 @@ p.statText {
   .large {
     gap: var(--2sm) var(--lg);
   }
+  .huge {
+    gap: 124px;
+  }
   .lots {
     gap: var(--md);
   }
@@ -215,6 +218,9 @@ p.statText {
   }
   .tiny {
     gap: var(--2sm)
+  }
+  .xlSpacer {
+    height: 124px;
   }
   .largeSpace {
     height: var(--4lg);
@@ -274,6 +280,9 @@ p.statText {
   .standard {
     gap: var(--3sm);
   }
+  .huge {
+    gap: 124px;
+  }
   .large {
     gap: var(--2sm) var(--lg);
   }
@@ -294,6 +303,9 @@ p.statText {
   }
   .tiny {
     gap: var(--2sm)
+  }
+  .xlSpacer {
+    height: 124px;
   }
   .largeSpace {
     height: var(--4lg);
@@ -350,6 +362,9 @@ p.statText {
   .standard {
     gap: var(--3sm);
   }
+  .huge {
+    gap: 124px;
+  }
   .large {
     gap: var(--2sm) var(--2lg);
   }
@@ -370,6 +385,9 @@ p.statText {
   }
   .tiny {
     gap: var(--2sm)
+  }
+  .xlSpacer {
+    height: 124px;
   }
   .largeSpace {
     height: var(--4lg);
@@ -433,6 +451,9 @@ p.statText {
   .large {
     gap: var(--2sm);
   }
+  .huge {
+    gap: var(--lg);
+  }
   .lots {
     gap: var(--sm);
   }
@@ -453,6 +474,9 @@ p.statText {
   }
   .none {
     gap: 0;
+  }
+  .xlSpacer {
+    height: var(--lg);
   }
   .largeSpace {
     height: var(--2md);

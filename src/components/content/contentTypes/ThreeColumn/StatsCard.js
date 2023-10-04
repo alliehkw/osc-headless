@@ -1,9 +1,7 @@
 import { Grid } from "@mui/material";
 
 function StatsCard({ stat_card_data }) {
-  console.log("stat_card_data", stat_card_data);
   const statsBlock = stat_card_data.column.map((stat, index) => {
-    console.log("stat.backgroundUnderText", stat.backgroundUnderText);
     return (
       <Grid item key={index} xs={12} sm={12} md={4} lg={4} xl={4}>
         <div

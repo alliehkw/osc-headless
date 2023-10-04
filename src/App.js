@@ -113,6 +113,23 @@ const app_data = gql`
                     }
                   }
                 }
+                ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumn {
+                  columnLayout
+                  column {
+                    gap
+                    columnContent {
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentTitle {
+                        textAlignment
+                        title
+                        titleSize
+                      }
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichText {
+                        columnAlignment
+                        textContent
+                      }
+                    }
+                  }
+                }
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {
                   oneColumn {
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnSpacer {

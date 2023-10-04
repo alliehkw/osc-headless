@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
-import OneColumn from "./SectionTypes/OneColumn.js";
-import ThreeColumn from "./SectionTypes/ThreeColumn.js";
+import OneColumn from "./sectionTypes/OneColumn.js";
+import TwoColumn from "./sectionTypes/TwoColumn.js";
+import ThreeColumn from "./sectionTypes/ThreeColumn.js";
 
 function ContentBlock({ content_data, review_content, screenSize }) {
   const columnBlocks = content_data.columnBlocks;
@@ -23,6 +24,21 @@ function ContentBlock({ content_data, review_content, screenSize }) {
     }
     if (
       column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumn"
+    ) {
+      return (
+        <div key={index}>
+          <TwoColumn
+            column_data={column.column}
+            column_layout={column.columnLayout}
+            class_data={content_data.gap[0]}
+            // screenSize={screenSize}
+          />
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
       "FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumn"
     ) {
       return (
@@ -37,7 +53,7 @@ function ContentBlock({ content_data, review_content, screenSize }) {
   });
   return (
     // TO DO: add in custom padding dynamically !!
-    <Box className={`section ${content_data.backgroundColor[0]} `}>
+    <Box className={`section ${content_data.backgroundColor[0]}`}>
       {contentColumns}
     </Box>
   );
