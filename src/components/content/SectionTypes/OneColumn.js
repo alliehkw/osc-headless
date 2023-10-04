@@ -79,7 +79,14 @@ function OneColumn({ column_data, class_data, screenSize }) {
     }
   });
 
-  return <div className={`OneColumn ${class_data}`}>{columns}</div>;
+  return (
+    <div
+      className={`OneColumn ${class_data}`}
+      style={{ maxWidth: "1440px", margin: "auto" }}
+    >
+      {columns}
+    </div>
+  );
 }
 
 export default OneColumn;

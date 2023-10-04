@@ -135,7 +135,9 @@ p.allCaps {
   text-transform: uppercase;
   letter-spacing: 0.0875em;
 }
-
+p.bodyText.twoColumn {
+  color: var(--gray-05);
+}
 p.subtext {
   font-family: 'Apertura, Regular';;
   font-size: 16px;

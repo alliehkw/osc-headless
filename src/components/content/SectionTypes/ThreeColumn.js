@@ -24,7 +24,7 @@ function ThreeColumn({ three_column_data, screenSize }) {
       );
     }
   });
-  return <div>{columns}</div>;
+  return <div style={{ maxWidth: "1440px", margin: "auto" }}>{columns}</div>;
 }
 
 export default ThreeColumn;

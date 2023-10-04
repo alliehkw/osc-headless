@@ -127,6 +127,14 @@ const app_data = gql`
                         columnAlignment
                         textContent
                       }
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentImage {
+                        image {
+                          node {
+                            altText
+                            mediaItemUrl
+                          }
+                        }
+                      }
                     }
                   }
                 }
