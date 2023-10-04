@@ -9,6 +9,9 @@ function Title({ title_data }) {
       break;
     default:
       titleElement = <h3>{title_data.title}</h3>;
+    case "h4":
+      titleElement = <h4>{title_data.title}</h4>;
+      break;
   }
   return (
     <div

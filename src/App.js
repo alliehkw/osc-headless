@@ -115,6 +115,7 @@ const app_data = gql`
                 }
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumn {
                   columnLayout
+                  contentVerticalJustification
                   column {
                     gap
                     columnContent {
@@ -134,6 +135,9 @@ const app_data = gql`
                             mediaItemUrl
                           }
                         }
+                        customImageHeight
+                        imageAlignment
+                        imageHeight
                       }
                     }
                   }

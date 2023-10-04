@@ -31,7 +31,7 @@ function ContentBlock({ content_data, review_content, screenSize }) {
           <TwoColumn
             column_data={column.column}
             column_layout={column.columnLayout}
-            class_data={content_data.gap[0]}
+            column_alignment={column.contentVerticalJustification}
             // screenSize={screenSize}
           />
         </div>

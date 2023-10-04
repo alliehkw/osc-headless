@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import Column from "../contentTypes/TwoColumn/Column.js";
-function TwoColumn({ column_data, column_layout }) {
+function TwoColumn({ column_data, column_layout, column_alignment }) {
   let leftWidth;
   let rightWidth;
   let spacerWidth;
@@ -44,7 +44,7 @@ function TwoColumn({ column_data, column_layout }) {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: column_alignment,
           margin: "auto",
         }}
         rowSpacing={{ xs: 2, sm: 0, md: 0, lg: 0, xl: 0 }}

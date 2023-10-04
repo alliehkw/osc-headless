@@ -632,8 +632,12 @@ button.transparent a {
   color: var(--osc-green-06);
 }
 
-.lightgreen h3 {
+.lightgreen h3, .lightgreen h2 {
   color: var(--osc-green-07);
+}
+
+.lightgreen p, .lightgreen li {
+  color: var(--osc-green-06);
 }
 
 li {
