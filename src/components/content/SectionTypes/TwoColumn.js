@@ -38,51 +38,50 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
   }
 
   return (
-    <div style={{ maxWidth: "1440px", margin: "auto" }}>
+    <Grid
+      container
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: column_alignment,
+        margin: "auto",
+        maxWidth: "1440px",
+      }}
+      rowSpacing={{ xs: 2, sm: 0, md: 0, lg: 0, xl: 0 }}
+    >
       <Grid
-        container
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: column_alignment,
-          margin: "auto",
-        }}
-        rowSpacing={{ xs: 2, sm: 0, md: 0, lg: 0, xl: 0 }}
+        item
+        xs={12}
+        sm={leftWidth}
+        md={leftWidth}
+        lg={leftWidth}
+        xl={leftWidth}
       >
-        <Grid
-          item
-          xs={12}
-          sm={leftWidth}
-          md={leftWidth}
-          lg={leftWidth}
-          xl={leftWidth}
-        >
-          <div>
-            <Column column_data={column_data[0]} />
-          </div>
-        </Grid>
-        <Grid
-          item
-          xs={0}
-          sm={spacerWidthTablet}
-          md={spacerWidth}
-          lg={spacerWidth}
-          xl={spacerWidth}
-        ></Grid>
-        <Grid
-          item
-          xs={12}
-          sm={rightWidth}
-          md={rightWidth}
-          lg={rightWidth}
-          xl={rightWidth}
-        >
-          <div>
-            <Column column_data={column_data[1]} />
-          </div>
-        </Grid>
+        <div>
+          <Column column_data={column_data[0]} />
+        </div>
       </Grid>
-    </div>
+      <Grid
+        item
+        xs={0}
+        sm={spacerWidthTablet}
+        md={spacerWidth}
+        lg={spacerWidth}
+        xl={spacerWidth}
+      ></Grid>
+      <Grid
+        item
+        xs={12}
+        sm={rightWidth}
+        md={rightWidth}
+        lg={rightWidth}
+        xl={rightWidth}
+      >
+        <div>
+          <Column column_data={column_data[1]} />
+        </div>
+      </Grid>
+    </Grid>
   );
 }
 
