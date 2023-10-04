@@ -1,5 +1,4 @@
 function Accolades({ accolade_data }) {
-  console.log("accolade_data", accolade_data);
   const accoladeBlock = accolade_data.accolade.map((accolade, index) => {
     return (
       <div

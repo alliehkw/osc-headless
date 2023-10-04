@@ -71,6 +71,39 @@ const app_data = gql`
               gap
               backgroundColor
               columnBlocks {
+                ... on FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumn {
+                  threeColumn {
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumnThreeColumnMediaCard {
+                      column {
+                        description
+                        imageOverlay
+                        linkType
+                        title
+                        image {
+                          node {
+                            altText
+                            mediaItemUrl
+                          }
+                        }
+                        overlay {
+                          backgroundUnderOverlay
+                          overlayPosition
+                          overlayText
+                        }
+                        pageLink {
+                          node {
+                            slug
+                          }
+                        }
+                        postLink {
+                          node {
+                            slug
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {
                   oneColumn {
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {

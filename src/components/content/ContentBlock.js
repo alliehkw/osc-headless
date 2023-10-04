@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import OneColumn from "./OneColumn.js";
+import ThreeColumn from "./ThreeColumn.js";
 
 function ContentBlock({ content_data, review_content, screenSize }) {
   const columnBlocks = content_data.columnBlocks;
-  console.log("content_data", content_data.gap[0]);
 
   let contentColumns = columnBlocks.map((column, index) => {
     // TO DO: handle other column block types!!
@@ -16,6 +16,19 @@ function ContentBlock({ content_data, review_content, screenSize }) {
           <OneColumn
             column_data={column.oneColumn}
             class_data={content_data.gap[0]}
+            screenSize={screenSize}
+          />
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumn"
+    ) {
+      return (
+        <div key={index}>
+          <ThreeColumn
+            three_column_data={column.threeColumn}
             screenSize={screenSize}
           />
         </div>
