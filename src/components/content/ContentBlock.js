@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import OneColumn from "./OneColumn.js";
-import ThreeColumn from "./ThreeColumn.js";
+import OneColumn from "./SectionTypes/OneColumn.js";
+import ThreeColumn from "./SectionTypes/ThreeColumn.js";
 
 function ContentBlock({ content_data, review_content, screenSize }) {
   const columnBlocks = content_data.columnBlocks;

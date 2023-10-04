@@ -1,9 +1,9 @@
-import Title from "./contentTypes/Title.js";
-import RichText from "./contentTypes/RichText.js";
-import Buttons from "./contentTypes/Buttons.js";
-import Image from "./contentTypes/Image.js";
-import Video from "./contentTypes/Video.js";
-import Accolades from "./contentTypes/Accolades.js";
+import Title from "../contentTypes/OneColumn/Title.js";
+import RichText from "../contentTypes/OneColumn/RichText.js";
+import Buttons from "../contentTypes/OneColumn/Buttons.js";
+import Image from "../contentTypes/OneColumn/Image.js";
+import Video from "../contentTypes/OneColumn/Video.js";
+import Accolades from "../contentTypes/OneColumn/Accolades.js";
 
 function OneColumn({ column_data, class_data, screenSize }) {
   let columns = column_data.map((column, index) => {
@@ -71,7 +71,6 @@ function OneColumn({ column_data, class_data, screenSize }) {
       column.__typename ===
       "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnSpacer"
     ) {
-      console.log("column", column.spacerSize[0]);
       return (
         <div key={index}>
           <div className={column.spacerSize[0]}></div>

@@ -1,5 +1,5 @@
 import { Grid, Box } from "@mui/material";
-import Button from "./Button.js";
+import Button from "../Button.js";
 
 function Buttons({ buttons_data }) {
   let blockWidth;

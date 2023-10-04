@@ -102,6 +102,15 @@ const app_data = gql`
                         }
                       }
                     }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumnThreeColumnStatsCard {
+                      column {
+                        backgroundShape
+                        textColor
+                        backgroundUnderStat
+                        statDescription
+                        statText
+                      }
+                    }
                   }
                 }
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {

@@ -144,6 +144,43 @@ p.subtext {
   line-height: 150%;
 }
 
+p.statText {
+  font-family: 'Petersburg, Regular';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  padding: 40px;
+}
+
+.statWhite {
+  color: var(--white);
+}
+
+.statWhite.circle {
+  background-color: var(--osc-brand-color);
+  border-radius: 100px;
+}
+
+.statWhite.square {
+  background-color: var(--osc-brand-color);
+  border-radius: 2px;
+}
+
+.statGreen.circle {
+  background-color: var(--white);
+  border-radius: 100px;
+}
+
+.statGreen.square {
+  background-color: var(--white);
+  border-radius: 2px;
+}
+
+.statGreen {
+  color: var(--osc-brand-color)
+}
+
 /* Large desktop  */
 @media (min-width: 1280px) {
   .section {
@@ -182,6 +219,9 @@ p.subtext {
   .largeSpace {
     height: var(--4lg);
   }
+  .mediumSpace {
+    height: var(--2md);
+  }
   .smallSpace {
     height: var(--4md);
   }
@@ -190,6 +230,12 @@ p.subtext {
   }
   .hero .play {
     margin-top: 288px;
+  }
+  .statBlock {
+    padding: var(--4md);
+  }
+  .statDescription {
+    max-width: 276px;
   }
   p {
     font-size: 20px;
@@ -252,6 +298,9 @@ p.subtext {
   .largeSpace {
     height: var(--4lg);
   }
+  .mediumSpace {
+    height: var(--2md);
+  }
   .smallSpace {
     height: var(--4md);
   }
@@ -260,6 +309,12 @@ p.subtext {
   }
   .hero .play {
     margin-top: 288px;
+  }
+  .statBlock {
+    padding: var(--4md);
+  }
+  .statDescription {
+    max-width: 276px;
   }
   p {
     font-size: 20px;
@@ -319,6 +374,9 @@ p.subtext {
   .largeSpace {
     height: var(--4lg);
   }
+  .mediumSpace {
+    height: var(--2md);
+  }
   .smallSpace {
     height: var(--4md);
   }
@@ -331,6 +389,12 @@ p.subtext {
   .play {
     height: 64px;
     width: 64px;
+  }
+  .statBlock {
+    padding: var(--2sm);
+  }
+  .statDescription {
+    max-width: 500px;
   }
   p {
     font-size: 18px;
@@ -393,6 +457,9 @@ p.subtext {
   .largeSpace {
     height: var(--2md);
   }
+  .mediumSpace {
+    height: var(--4md);
+  }
   .smallSpace {
     height: var(--2sm);
   }
@@ -405,6 +472,9 @@ p.subtext {
   .play {
     height: 64px;
     width: 64px;
+  }
+  .statBlock {
+    padding: var(--2sm);
   }
   p {
     font-size: 16px;

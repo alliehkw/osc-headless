@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player";
-import Play from "../../../icons/Play.js";
+import Play from "../../../../icons/Play.js";
 import { useState } from "react";
 import { Grid } from "@mui/material";
 

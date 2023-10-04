@@ -2,16 +2,12 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function MediaCard({ media_card_data, screenSize }) {
-  //   let spacingSize;
   let imageHeight;
   if (screenSize.width < 600 && screenSize.width > 0) {
-    // spacingSize = 2.5;
     imageHeight = "251.25px";
   } else if (screenSize.width >= 600 && screenSize.width < 1023) {
-    // spacingSize = 2.5;
     imageHeight = "433.125px";
   } else if (screenSize.width >= 1024) {
-    // spacingSize = 1.5;
     imageHeight = "280px";
   }
   let columns = media_card_data.column.map((column, index) => {
@@ -118,6 +114,7 @@ function MediaCard({ media_card_data, screenSize }) {
       container
       columnSpacing={{ xs: 0, sm: 0, md: 1.5, lg: 1.5, xl: 1.5 }}
       rowSpacing={{ xs: 2.5, sm: 2.5, md: 0, lg: 0, xl: 0 }}
+      sx={{ display: "flex", justifyContent: "center" }}
     >
       {columns}
     </Grid>
