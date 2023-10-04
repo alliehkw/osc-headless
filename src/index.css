@@ -179,6 +179,12 @@ p.subtext {
   .tiny {
     gap: var(--2sm)
   }
+  .largeSpace {
+    height: var(--4lg);
+  }
+  .smallSpace {
+    height: var(--4md);
+  }
   .video {
     height: 824px;
   }
@@ -243,6 +249,12 @@ p.subtext {
   .tiny {
     gap: var(--2sm)
   }
+  .largeSpace {
+    height: var(--4lg);
+  }
+  .smallSpace {
+    height: var(--4md);
+  }
   .video {
     height: 824px;
   }
@@ -303,6 +315,12 @@ p.subtext {
   }
   .tiny {
     gap: var(--2sm)
+  }
+  .largeSpace {
+    height: var(--4lg);
+  }
+  .smallSpace {
+    height: var(--4md);
   }
   .video {
     height: 472px;
@@ -368,6 +386,15 @@ p.subtext {
   }
   .tiny {
     gap: var(--2sm)
+  }
+  .none {
+    gap: 0;
+  }
+  .largeSpace {
+    height: var(--2md);
+  }
+  .smallSpace {
+    height: var(--2sm);
   }
   .video {
     height: 472px;

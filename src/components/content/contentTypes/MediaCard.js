@@ -2,29 +2,22 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function MediaCard({ media_card_data, screenSize }) {
-  console.log("media_card_data", media_card_data);
-  let spacingSize;
+  //   let spacingSize;
   let imageHeight;
-  let imageWidth;
   if (screenSize.width < 600 && screenSize.width > 0) {
-    spacingSize = 2.5;
+    // spacingSize = 2.5;
     imageHeight = "251.25px";
-    imageWidth = "335px";
   } else if (screenSize.width >= 600 && screenSize.width < 1023) {
-    spacingSize = 2.5;
+    // spacingSize = 2.5;
     imageHeight = "433.125px";
-    imageWidth = "770px";
   } else if (screenSize.width >= 1024) {
-    spacingSize = 1.5;
+    // spacingSize = 1.5;
     imageHeight = "280px";
-    imageWidth = "384px";
   }
   let columns = media_card_data.column.map((column, index) => {
     let overlayBackground;
     if (column.overlay) {
       overlayBackground = column.overlay.map((overlay, index) => {
-        console.log("column", column);
-        console.log("column.overlayPosition", column.overlayPosition);
         let top = "0";
         let bottom = "0";
         let left = "0";
@@ -74,8 +67,6 @@ function MediaCard({ media_card_data, screenSize }) {
       });
     }
 
-    console.log("overlayBackground", overlayBackground);
-
     return (
       <Grid
         item
@@ -85,12 +76,14 @@ function MediaCard({ media_card_data, screenSize }) {
         md={4}
         lg={4}
         xl={4}
-        sx={{ textAlign: "left" }}
+        sx={{
+          textAlign: "left",
+        }}
       >
         <div className="image-wrapper">
           <div
             className="image-container"
-            style={{ height: imageHeight, width: imageWidth }}
+            style={{ height: imageHeight, width: "100%" }}
           >
             <img
               src={column.image.node.mediaItemUrl}
@@ -108,7 +101,10 @@ function MediaCard({ media_card_data, screenSize }) {
         <div style={{ height: "16px" }}></div>
         {/* TO DO: hook up post link!!  */}
         {column.linkType === "page" ? (
-          <button className="transparent" style={{ padding: 0 }}>
+          <button
+            className="transparent"
+            style={{ padding: 0, textAlign: "left" }}
+          >
             <Link to={column.pageLink.node.slug}>{`Read More >>>`}</Link>
           </button>
         ) : (
@@ -118,7 +114,11 @@ function MediaCard({ media_card_data, screenSize }) {
     );
   });
   return (
-    <Grid container spacing={spacingSize}>
+    <Grid
+      container
+      columnSpacing={{ xs: 0, sm: 0, md: 1.5, lg: 1.5, xl: 1.5 }}
+      rowSpacing={{ xs: 2.5, sm: 2.5, md: 0, lg: 0, xl: 0 }}
+    >
       {columns}
     </Grid>
   );

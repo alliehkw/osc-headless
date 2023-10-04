@@ -67,6 +67,17 @@ function OneColumn({ column_data, class_data, screenSize }) {
         </div>
       );
     }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnSpacer"
+    ) {
+      console.log("column", column.spacerSize[0]);
+      return (
+        <div key={index}>
+          <div className={column.spacerSize[0]}></div>
+        </div>
+      );
+    }
   });
 
   return <div className={`OneColumn ${class_data}`}>{columns}</div>;

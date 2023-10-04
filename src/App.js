@@ -106,6 +106,9 @@ const app_data = gql`
                 }
                 ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumn {
                   oneColumn {
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnSpacer {
+                      spacerSize
+                    }
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {
                       fieldGroupName
                       textAlignment
