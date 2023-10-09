@@ -1,5 +1,4 @@
 function Image(image_data) {
-  console.log("image_data", image_data);
   let imageAlignment = "center";
   let imageHeight = "auto";
   let imageWidth = "100%";

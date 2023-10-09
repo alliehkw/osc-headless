@@ -35,8 +35,15 @@ function Title({ title_data }) {
         </h2>
       );
       break;
+    case "h3":
+      titleElement = (
+        <h3 styles={{ textAlignment: title_data.textAlignment }}>
+          {title_data.title}
+        </h3>
+      );
+      break;
     default:
-      titleElement = <h3>{title_data.title}</h3>;
+      titleElement = <h4>{title_data.title}</h4>;
   }
 
   return (
@@ -44,6 +51,7 @@ function Title({ title_data }) {
       container
       sx={{
         textAlign: `${title_data.textAlignment}`,
+        maxWidth: "1440px",
       }}
     >
       <Grid

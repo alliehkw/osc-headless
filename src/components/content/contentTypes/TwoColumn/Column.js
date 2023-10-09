@@ -13,7 +13,7 @@ function Column({ column_data }) {
       }
       if (
         column.__typename ===
-        "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichText"
+        "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichTextWysiwyg"
       ) {
         return <RichText key={index} rich_text_data={column} />;
       }

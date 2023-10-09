@@ -29,7 +29,10 @@ function StatsCard({ stat_card_data }) {
     );
   });
   return (
-    <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+    <Grid
+      container
+      sx={{ display: "flex", justifyContent: "center", maxWidth: "1440px" }}
+    >
       {statsBlock}
     </Grid>
   );

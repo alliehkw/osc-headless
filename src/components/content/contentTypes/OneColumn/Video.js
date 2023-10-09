@@ -40,6 +40,7 @@ function Video({ video_data, screenSize }) {
         container
         sx={{
           textAlign: `${video_data.videoAlignment}`,
+          maxWidth: "1440px",
         }}
       >
         <Grid

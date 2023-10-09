@@ -2,6 +2,8 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function MediaCard({ media_card_data, screenSize }) {
+  console.log("media_card_data", media_card_data);
+
   let imageHeight;
   if (screenSize.width < 600 && screenSize.width > 0) {
     imageHeight = "251.25px";
@@ -96,7 +98,7 @@ function MediaCard({ media_card_data, screenSize }) {
         </p>
         <div style={{ height: "16px" }}></div>
         {/* TO DO: hook up post link!!  */}
-        {column.linkType === "page" ? (
+        {column.linkType === "page" && column.pageLink ? (
           <button
             className="transparent"
             style={{ padding: 0, textAlign: "left" }}
@@ -114,7 +116,7 @@ function MediaCard({ media_card_data, screenSize }) {
       container
       columnSpacing={{ xs: 0, sm: 0, md: 1.5, lg: 1.5, xl: 1.5 }}
       rowSpacing={{ xs: 2.5, sm: 2.5, md: 0, lg: 0, xl: 0 }}
-      sx={{ display: "flex", justifyContent: "center" }}
+      sx={{ display: "flex", justifyContent: "center", maxWidth: "1440px" }}
     >
       {columns}
     </Grid>

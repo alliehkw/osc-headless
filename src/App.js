@@ -124,7 +124,7 @@ const app_data = gql`
                         title
                         titleSize
                       }
-                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichText {
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichTextWysiwyg {
                         columnAlignment
                         textContent
                       }

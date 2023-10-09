@@ -27,6 +27,7 @@ function Buttons({ buttons_data }) {
       className={buttons_data.buttonPadding[0]}
       style={{
         width: blockWidth,
+        maxWidth: "1440px",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: `${buttons_data.blockAlign}`,

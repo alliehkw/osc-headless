@@ -20,7 +20,7 @@ function RichText({ rich_text_data }) {
   }
 
   return (
-    <Grid container>
+    <Grid container sx={{ maxWidth: "1440px" }}>
       <Grid
         item
         xs={12}

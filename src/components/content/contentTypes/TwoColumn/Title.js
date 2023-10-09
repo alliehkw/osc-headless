@@ -7,8 +7,9 @@ function Title({ title_data }) {
     case "h2":
       titleElement = <h2>{title_data.title}</h2>;
       break;
-    default:
+    case "h3":
       titleElement = <h3>{title_data.title}</h3>;
+      break;
     case "h4":
       titleElement = <h4>{title_data.title}</h4>;
       break;

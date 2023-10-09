@@ -29,7 +29,12 @@ function Accolades({ accolade_data }) {
   return (
     <div
       className="accolades-container"
-      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexWrap: "wrap",
+        maxWidth: "1440px",
+      }}
     >
       {accoladeBlock}
     </div>
