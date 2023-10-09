@@ -147,6 +147,19 @@ const app_data = gql`
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnSpacer {
                       spacerSize
                     }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnImageCarousel {
+                      imageHeightDesktop
+                      imageHeightMobile
+                      imageHeightTablet
+                      images {
+                        image {
+                          node {
+                            altText
+                            mediaItemUrl
+                          }
+                        }
+                      }
+                    }
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {
                       fieldGroupName
                       textAlignment

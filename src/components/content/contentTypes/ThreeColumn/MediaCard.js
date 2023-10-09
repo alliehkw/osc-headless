@@ -2,7 +2,6 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function MediaCard({ media_card_data, screenSize }) {
-  console.log("media_card_data", media_card_data);
 
   let imageHeight;
   if (screenSize.width < 600 && screenSize.width > 0) {

@@ -4,6 +4,7 @@ import Buttons from "../contentTypes/OneColumn/Buttons.js";
 import Image from "../contentTypes/OneColumn/Image.js";
 import Video from "../contentTypes/OneColumn/Video.js";
 import Accolades from "../contentTypes/OneColumn/Accolades.js";
+import ImageCarousel from "../contentTypes/OneColumn/ImageCarousel.js";
 
 function OneColumn({ column_data, class_data, screenSize }) {
   let columns = column_data.map((column, index) => {
@@ -74,6 +75,16 @@ function OneColumn({ column_data, class_data, screenSize }) {
       return (
         <div key={index}>
           <div className={column.spacerSize[0]}></div>
+        </div>
+      );
+    }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnImageCarousel"
+    ) {
+      return (
+        <div key={index}>
+          <ImageCarousel carousel_data={column} screenSize={screenSize} />
         </div>
       );
     }

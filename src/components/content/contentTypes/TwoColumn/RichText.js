@@ -1,5 +1,4 @@
 function RichText({ rich_text_data }) {
-  console.log("rich_text_data", rich_text_data);
   return (
     <div>
       <p

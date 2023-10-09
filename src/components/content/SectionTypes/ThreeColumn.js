@@ -3,12 +3,10 @@ import StatsCard from "../contentTypes/ThreeColumn/StatsCard";
 
 function ThreeColumn({ three_column_data, screenSize }) {
   let columns = three_column_data.map((column, index) => {
-    console.log("column", column);
     if (
       column.__typename ===
       "FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumnThreeColumnMediaCard"
     ) {
-      // console.log("column", column);
       return (
         <div key={index}>
           <MediaCard media_card_data={column} screenSize={screenSize} />
@@ -20,7 +18,9 @@ function ThreeColumn({ three_column_data, screenSize }) {
       "FlexibleContentCustomContentBlocksSectionColumnBlocksThreeColumnThreeColumnStatsCard"
     ) {
       return (
-        <div key={index}>{/* <StatsCard stat_card_data={column} /> */}</div>
+        <div key={index}>
+          <StatsCard stat_card_data={column} />
+        </div>
       );
     }
   });
