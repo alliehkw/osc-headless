@@ -1,6 +1,8 @@
 import Title from "./Title.js";
 import RichText from "./RichText.js";
 import Image from "./Image.js";
+import ReviewBlockRotator from "./ReviewBlockRotator.js";
+import Buttons from "../Buttons.js";
 function Column({ column_data }) {
   let columns;
   if (column_data.columnContent) {
@@ -23,6 +25,38 @@ function Column({ column_data }) {
       ) {
         return <Image key={index} image_data={column} />;
       }
+      if (
+        column.__typename ===
+        "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRotator"
+      ) {
+        return <ReviewBlockRotator key={index} review_content={column} />;
+      }
+      if (
+        column.__typename ===
+        "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentForceContentApart"
+      ) {
+        return (
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              flexGrow: 1,
+              height: "100%",
+              minHeight: "10px",
+            }}
+          ></div>
+        );
+      }
+      if (
+        column.__typename ===
+        "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentButtons"
+      ) {
+        return (
+          <Buttons key={index} buttons_data={column}>
+            buttons
+          </Buttons>
+        );
+      }
     });
   }
   return (
@@ -32,6 +66,7 @@ function Column({ column_data }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        height: "100%",
       }}
     >
       {columns}

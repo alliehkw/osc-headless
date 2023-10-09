@@ -709,3 +709,16 @@ div::-webkit-scrollbar-track {
 .smooth-scroll {
   transition: scroll-behavior 0.5s ease-in-out;
 }
+
+.testimonial {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}

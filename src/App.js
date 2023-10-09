@@ -124,9 +124,36 @@ const app_data = gql`
                         title
                         titleSize
                       }
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentButtons {
+                        blockAlign
+                        fieldGroupName
+                        blockWidth
+                        buttonPadding
+                        blockAlign
+                        button {
+                          buttonBackgroundColor
+                          buttonText
+                          linkType
+                          url
+                          pageLink {
+                            node {
+                              slug
+                            }
+                          }
+                          document {
+                            nodes {
+                              mediaItemUrl
+                            }
+                          }
+                        }
+                      }
                       ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRichTextWysiwyg {
                         columnAlignment
                         textContent
+                        maxWidth
+                      }
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentForceContentApart {
+                        forceContentApart
                       }
                       ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentImage {
                         image {
@@ -138,6 +165,24 @@ const app_data = gql`
                         customImageHeight
                         imageAlignment
                         imageHeight
+                      }
+                      ... on FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentRotator {
+                        rotatorType(first: 500) {
+                          edges {
+                            node {
+                              id
+                              ... on Review {
+                                id
+                                reviewFields {
+                                  dateOfReview
+                                  name
+                                  review
+                                  starRating
+                                }
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }

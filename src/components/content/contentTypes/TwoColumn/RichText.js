@@ -1,6 +1,10 @@
 function RichText({ rich_text_data }) {
+  let maxWidth = "auto";
+  if (rich_text_data.maxWidth) {
+    maxWidth = rich_text_data.maxWidth;
+  }
   return (
-    <div>
+    <div style={{ maxWidth: maxWidth }}>
       <p
         className="bodyText twoColumn"
         dangerouslySetInnerHTML={{

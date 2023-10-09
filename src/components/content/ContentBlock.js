@@ -3,7 +3,7 @@ import OneColumn from "./sectionTypes/OneColumn.js";
 import TwoColumn from "./sectionTypes/TwoColumn.js";
 import ThreeColumn from "./sectionTypes/ThreeColumn.js";
 
-function ContentBlock({ content_data, review_content, screenSize }) {
+function ContentBlock({ content_data, screenSize }) {
   const columnBlocks = content_data.columnBlocks;
 
   let contentColumns = columnBlocks.map((column, index) => {
@@ -32,7 +32,6 @@ function ContentBlock({ content_data, review_content, screenSize }) {
             column_data={column.column}
             column_layout={column.columnLayout}
             column_alignment={column.contentVerticalJustification}
-            // screenSize={screenSize}
           />
         </div>
       );

@@ -19,9 +19,9 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
       spacerWidthTablet = 0.5;
       break;
     case "sixColsixCol":
-      leftWidth = 6;
-      rightWidth = 6;
-      spacerWidth = 0;
+      leftWidth = 5.5;
+      rightWidth = 5.5;
+      spacerWidth = 1;
       spacerWidthTablet = 0;
       break;
     case "threeColnineCol":
@@ -36,7 +36,6 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
       spacerWidth = 0;
       spacerWidthTablet = 0;
   }
-
   return (
     <Grid
       container
@@ -46,6 +45,7 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
         alignItems: column_alignment,
         margin: "auto",
         maxWidth: "1440px",
+        height: "100%",
       }}
       rowSpacing={{ xs: 2, sm: 0, md: 0, lg: 0, xl: 0 }}
     >
@@ -57,7 +57,7 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
         lg={leftWidth}
         xl={leftWidth}
       >
-        <div>
+        <div style={{ height: "100%" }}>
           <Column column_data={column_data[0]} />
         </div>
       </Grid>
@@ -77,7 +77,7 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
         lg={rightWidth}
         xl={rightWidth}
       >
-        <div>
+        <div style={{ height: "100%" }}>
           <Column column_data={column_data[1]} />
         </div>
       </Grid>
