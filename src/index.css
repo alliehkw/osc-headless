@@ -548,9 +548,14 @@ a {
   text-decoration: none;
 }
 
-/* a:visited { 
-  text-decoration: none; 
- } */
+a#side-nav {
+    transition: color 0.2s;
+}
+
+a#side-nav:hover {
+  font-weight: bold;
+  transition: color 0.2s;
+}
 
 button {
   font-size: 15px;

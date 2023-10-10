@@ -3,7 +3,12 @@ import OneColumn from "./sectionTypes/OneColumn.js";
 import TwoColumn from "./sectionTypes/TwoColumn.js";
 import ThreeColumn from "./sectionTypes/ThreeColumn.js";
 
-function ContentBlock({ content_data, screenSize }) {
+function ContentBlock({ content_data, screenSize, sectionPadding }) {
+  console.log("sectionPadding", sectionPadding);
+  let sectionType = "section";
+  if (!sectionPadding) {
+    sectionType = null;
+  }
   // console.log("content_data", content_data);
   const columnBlocks = content_data.columnBlocks;
 
@@ -53,7 +58,7 @@ function ContentBlock({ content_data, screenSize }) {
   });
   return (
     // TO DO: add in custom padding dynamically !!
-    <Box className={`section ${content_data.backgroundColor[0]}`}>
+    <Box className={`${sectionType} ${content_data.backgroundColor[0]}`}>
       {contentColumns}
     </Box>
   );

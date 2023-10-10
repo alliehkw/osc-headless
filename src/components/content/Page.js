@@ -1,8 +1,12 @@
 import { Grid } from "@mui/material";
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
+import SideNav from "./sectionTypes/SideNav.js";
 
 function Page({ page_data, screenSize, parent }) {
+  console.log("page_data.parent", page_data.parent);
+  let sectionPadding = true;
+
   // Seperate out data to conditionally render heros and content sections if they exist
   let hero_data = [];
   let content_blocks = [];
@@ -12,7 +16,11 @@ function Page({ page_data, screenSize, parent }) {
   let parentHeros;
   let pageContent;
   let parentPageContent;
+  let sideNav = null;
   let customBlocks = page_data.flexibleContent.customContentBlocks;
+  if (parent) {
+    sideNav = parent.children.nodes;
+  }
   if (customBlocks) {
     for (let block of customBlocks) {
       if (block.__typename === "FlexibleContentCustomContentBlocksHero") {
@@ -41,7 +49,7 @@ function Page({ page_data, screenSize, parent }) {
     heros = hero_data.map((hero, index) => {
       return (
         <div key={index}>
-          <Hero hero_data={hero} />
+          <Hero hero_data={hero} sectionPadding={false} />
         </div>
       );
     });
@@ -51,7 +59,7 @@ function Page({ page_data, screenSize, parent }) {
     parentHeros = parent_hero_data.map((hero, index) => {
       return (
         <div key={index}>
-          <Hero hero_data={hero} />
+          <Hero hero_data={hero} sectionPadding={true} />
         </div>
       );
     });
@@ -61,7 +69,11 @@ function Page({ page_data, screenSize, parent }) {
     pageContent = content_blocks.map((content, index) => {
       return (
         <div key={index}>
-          <ContentBlock content_data={content} screenSize={screenSize} />
+          <ContentBlock
+            content_data={content}
+            screenSize={screenSize}
+            sectionPadding={false}
+          />
         </div>
       );
     });
@@ -71,7 +83,11 @@ function Page({ page_data, screenSize, parent }) {
     parentPageContent = parent_content_blocks_data.map((content, index) => {
       return (
         <div key={index}>
-          <ContentBlock content_data={content} screenSize={screenSize} />
+          <ContentBlock
+            content_data={content}
+            screenSize={screenSize}
+            sectionPadding={true}
+          />
         </div>
       );
     });
@@ -84,26 +100,18 @@ function Page({ page_data, screenSize, parent }) {
           <>
             {parentHeros}
             {parentPageContent}
-            <Grid container>
+            <Grid
+              container
+              sx={{ display: "flex", justifyContent: "space-between" }}
+              className="section"
+            >
               <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
-                <div
-                  style={{
-                    backgroundColor: "pink",
-                    height: "300px",
-                    width: "100%",
-                  }}
-                >
-                  nav bar
+                <div style={{ width: "100%" }}>
+                  <SideNav sideNav={sideNav} parentSlug={parent.slug} />
                 </div>
               </Grid>
-              <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
-                <div
-                  style={{
-                    backgroundColor: "yellow",
-                    height: "100%",
-                    width: "100%",
-                  }}
-                >
+              <Grid item xs={12} sm={12} md={8.5} lg={8.5} xl={8.5}>
+                <div style={{ width: "100%" }}>
                   {heros}
                   {pageContent}
                 </div>

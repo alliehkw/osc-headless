@@ -62,6 +62,15 @@ const app_data = gql`
             id
           }
         }
+        children {
+          nodes {
+            id
+            slug
+            ... on Page {
+              title
+            }
+          }
+        }
         flexibleContent {
           customContentBlocks {
             ... on FlexibleContentCustomContentBlocksHero {
