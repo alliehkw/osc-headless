@@ -49,7 +49,7 @@ function Page({ page_data, screenSize, parent }) {
     heros = hero_data.map((hero, index) => {
       return (
         <div key={index}>
-          <Hero hero_data={hero} sectionPadding={false} />
+          <Hero hero_data={hero} sectionPadding={true} />
         </div>
       );
     });
@@ -72,7 +72,7 @@ function Page({ page_data, screenSize, parent }) {
           <ContentBlock
             content_data={content}
             screenSize={screenSize}
-            sectionPadding={false}
+            sectionPadding={true}
           />
         </div>
       );
@@ -104,6 +104,7 @@ function Page({ page_data, screenSize, parent }) {
               container
               sx={{ display: "flex", justifyContent: "space-between" }}
               className="section"
+              id="child"
             >
               <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
                 <div style={{ width: "100%" }}>

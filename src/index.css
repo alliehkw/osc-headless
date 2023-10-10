@@ -79,6 +79,10 @@ body {
   justify-content: center;
 }
 
+#child .section {
+  padding: 0;
+}
+
 .tall, .short, .video {
   align-items: center;
 }
