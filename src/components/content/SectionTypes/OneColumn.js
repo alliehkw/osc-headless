@@ -5,6 +5,7 @@ import Image from "../contentTypes/OneColumn/Image.js";
 import Video from "../contentTypes/OneColumn/Video.js";
 import Accolades from "../contentTypes/OneColumn/Accolades.js";
 import ImageCarousel from "../contentTypes/OneColumn/ImageCarousel.js";
+import Accordion from "../contentTypes/OneColumn/Accordion.js";
 
 function OneColumn({ column_data, class_data, screenSize }) {
   let columns = column_data.map((column, index) => {
@@ -88,8 +89,17 @@ function OneColumn({ column_data, class_data, screenSize }) {
         </div>
       );
     }
+    if (
+      column.__typename ===
+      "FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnAccordion"
+    ) {
+      return (
+        <div key={index}>
+          <Accordion accordion_data={column} screenSize={screenSize} />
+        </div>
+      );
+    }
   });
-
   return (
     <div
       className={`OneColumn ${class_data}`}

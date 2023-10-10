@@ -29,7 +29,7 @@ function RichText({ rich_text_data }) {
         lg={richTextWidth}
         xl={richTextWidth}
         sx={{
-          mx: rich_text_data.columnAlignment === "center" ? "auto" : "0",
+          mx: rich_text_data.columnAlignment === "center" ? "auto" : "auto",
           ...(rich_text_data.customPadding && {
             paddingTop: `${paddingDetails.paddingTop}px`,
             paddingBottom: `${paddingDetails.paddingBottom}px`,

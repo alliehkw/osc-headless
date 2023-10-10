@@ -62,7 +62,7 @@ function Title({ title_data }) {
         lg={titleWidth}
         xl={titleWidth}
         sx={{
-          mx: title_data.textAlignment === "center" ? "auto" : "0",
+          mx: title_data.textAlignment === "center" ? "auto" : "auto",
           ...(title_data.customPadding && {
             paddingTop: `${paddingDetails.paddingTop}px`,
             paddingBottom: `${paddingDetails.paddingBottom}px`,

@@ -50,6 +50,7 @@ const app_data = gql`
         title
         slug
         isFrontPage
+        parentId
         flexibleContent {
           customContentBlocks {
             ... on FlexibleContentCustomContentBlocksHero {
@@ -203,6 +204,13 @@ const app_data = gql`
                             mediaItemUrl
                           }
                         }
+                      }
+                    }
+                    ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnAccordion {
+                      accordionWidth
+                      tab {
+                        content
+                        title
                       }
                     }
                     ... on FlexibleContentCustomContentBlocksSectionColumnBlocksOneColumnOneColumnTitle {

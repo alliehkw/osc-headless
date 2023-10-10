@@ -1,20 +1,27 @@
 import { Grid } from "@mui/material";
 import Column from "../contentTypes/TwoColumn/Column.js";
+
 function TwoColumn({ column_data, column_layout, column_alignment }) {
   let leftWidth;
   let rightWidth;
+  let leftWidthNarrow = 12;
+  let rightWidthNarrow = 12;
   let spacerWidth;
   let spacerWidthTablet;
   switch (column_layout[0]) {
     case "fiveColsixCol":
       leftWidth = 5;
       rightWidth = 6;
+      leftWidthNarrow = 5;
+      rightWidthNarrow = 6;
       spacerWidth = 1;
       spacerWidthTablet = 0.5;
       break;
     case "sixColfiveCol":
       leftWidth = 6;
       rightWidth = 5;
+      leftWidthNarrow = 6;
+      rightWidthNarrow = 5;
       spacerWidth = 1;
       spacerWidthTablet = 0.5;
       break;
@@ -52,12 +59,12 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
       <Grid
         item
         xs={12}
-        sm={leftWidth}
+        sm={leftWidthNarrow}
         md={leftWidth}
         lg={leftWidth}
         xl={leftWidth}
       >
-        <div style={{ height: "100%" }}>
+        <div>
           <Column column_data={column_data[0]} />
         </div>
       </Grid>
@@ -72,12 +79,12 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
       <Grid
         item
         xs={12}
-        sm={rightWidth}
+        sm={rightWidthNarrow}
         md={rightWidth}
         lg={rightWidth}
         xl={rightWidth}
       >
-        <div style={{ height: "100%" }}>
+        <div>
           <Column column_data={column_data[1]} />
         </div>
       </Grid>

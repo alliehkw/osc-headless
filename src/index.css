@@ -22,6 +22,18 @@
   --star-size: 24px;
   --star-color: #FCBD06;
   --star-background: #C4DAE3;
+  .xlSpacer {
+    height: 124px;
+  }
+  .largeSpace {
+    height: var(--4lg);
+  }
+  .mediumSpace {
+    height: var(--2md);
+  }
+  .smallSpace {
+    height: var(--4md);
+  }
   --4sm: 8px;
   --3sm: 16px;
   --2sm: 24px;
@@ -532,8 +544,6 @@ p.statText {
   align-items: center;
 }
 
-
-
 a {
   text-decoration: none;
 }
@@ -721,4 +731,10 @@ div::-webkit-scrollbar-track {
 
 .fade-out {
   opacity: 0;
+}
+
+.tab svg.accordion-carrot {
+  stroke: var(--gray-06);
+  height: var(--2sm);
+  width: var(--2sm);
 }
