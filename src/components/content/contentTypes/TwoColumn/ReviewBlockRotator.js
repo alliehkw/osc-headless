@@ -28,7 +28,6 @@ function ReviewBlockRotator({ review_content }) {
   } else if (screenSize.width >= 600) {
     imageHeight = 496;
   }
-  console.log("imageHeight", imageHeight);
 
   function handleForwardClick(currentIndex, setCurrentIndex) {
     const nextIndex =

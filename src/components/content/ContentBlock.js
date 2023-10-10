@@ -4,6 +4,7 @@ import TwoColumn from "./sectionTypes/TwoColumn.js";
 import ThreeColumn from "./sectionTypes/ThreeColumn.js";
 
 function ContentBlock({ content_data, screenSize }) {
+  // console.log("content_data", content_data);
   const columnBlocks = content_data.columnBlocks;
 
   let contentColumns = columnBlocks.map((column, index) => {

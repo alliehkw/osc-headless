@@ -1,7 +1,6 @@
 import Button from "./Button.js";
 
 function Buttons({ buttons_data }) {
-  console.log("buttons_data", buttons_data);
   let blockWidth;
   switch (buttons_data.blockWidth[0]) {
     case "auto":

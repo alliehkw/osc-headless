@@ -2,6 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 function DropDown({ drop_down, isVisible }) {
   const dropDownBlock = drop_down.map((dd, index) => {
     let slug = dd.connectedNode.node.slug;
+    if (dd.connectedNode.node.parent !== null) {
+      slug = `${dd.connectedNode.node.parent.node.slug}/${dd.connectedNode.node.slug}`;
+    }
     return (
       <div key={index}>
         {isVisible ? (

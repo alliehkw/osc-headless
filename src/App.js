@@ -40,6 +40,11 @@ const app_data = gql`
               id
               isFrontPage
               slug
+              parent {
+                node {
+                  slug
+                }
+              }
             }
           }
         }
@@ -49,8 +54,14 @@ const app_data = gql`
       nodes {
         title
         slug
+        id
         isFrontPage
-        parentId
+        parent {
+          node {
+            slug
+            id
+          }
+        }
         flexibleContent {
           customContentBlocks {
             ... on FlexibleContentCustomContentBlocksHero {
@@ -321,17 +332,6 @@ const app_data = gql`
         }
       }
     }
-    reviews {
-      nodes {
-        title
-        reviewFields {
-          dateOfReview
-          name
-          review
-          starRating
-        }
-      }
-    }
   }
 `;
 
@@ -417,7 +417,6 @@ function App() {
             <PageContent
               content_data={data.pages.nodes}
               screenSize={screenSize}
-              // review_content={data.reviews.nodes}
             />
             {/* <Footer footerItems={footerItems} /> */}
           </Router>

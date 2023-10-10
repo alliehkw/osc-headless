@@ -2,7 +2,6 @@ import { Grid } from "@mui/material";
 import Tab from "./Tab.js";
 
 function Accordion({ accordion_data, screenSize }) {
-  //   console.log("accordion_data", accordion_data);
   let accordionWidth;
   switch (accordion_data.accordionWidth[0]) {
     case "auto":
