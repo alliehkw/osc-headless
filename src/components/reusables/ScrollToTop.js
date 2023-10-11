@@ -8,9 +8,10 @@ export default function ScrollToTop() {
   useEffect(() => {
     // Check if the current pathname and the previous pathname are both in the list of paths to exclude
     const excludedPaths = [
-      "/patient-education/hip",
+      "/patient-education/hip-and-thigh",
       "/patient-education/shoulder",
-      "/patient-education/knee",
+      "/patient-education/the-knee",
+      "/patient-education/kinematic-alignment",
       "/patient-education/pre-op-preparation",
       "/patient-education/post-op-recovery",
     ];

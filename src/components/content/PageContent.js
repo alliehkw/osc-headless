@@ -18,7 +18,6 @@ function PageContent({ content_data, screenSize }) {
         (item) => item.id === page.ancestors.nodes[1].id
       );
     }
-    console.log("route", route);
     return (
       <Route
         key={index}

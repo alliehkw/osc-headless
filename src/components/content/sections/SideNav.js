@@ -12,12 +12,17 @@ function SideNav({ sideNav, parentSlug }) {
     let slug = `/${parentSlug}/${item.slug}`;
     if (item.children.nodes.length > 0) {
       let sortedNested = nestedLinks.sort((a, b) => a.menuOrder - b.menuOrder);
+
       nestedLinks = sortedNested.map((nest, index) => {
+        let nestedLinkColor = "#112E3D";
+        if (`/${parentSlug}/${nest.slug}` === pathname) {
+          nestedLinkColor = "#008771";
+        }
         return (
           <div key={index}>
             <Link
               to={`/${parentSlug}/${nest.slug}`}
-              style={{ color: linkColor }}
+              style={{ color: nestedLinkColor, textDecoration: "none" }}
             >
               <li>{nest.title}</li>
             </Link>
@@ -26,7 +31,7 @@ function SideNav({ sideNav, parentSlug }) {
       });
     }
 
-    if (pathname === slug) {
+    if (pathname === slug && item.children.nodes.length === 0) {
       linkColor = "#008771";
     } else {
       linkColor = "#112E3D";
@@ -37,7 +42,7 @@ function SideNav({ sideNav, parentSlug }) {
           to={slug}
           className="allCaps"
           id="side-nav"
-          style={{ color: linkColor }}
+          style={{ color: linkColor, textDecoration: "none" }}
         >
           {item.title}
         </Link>
