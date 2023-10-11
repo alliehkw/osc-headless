@@ -5,8 +5,29 @@ function SideNav({ sideNav, parentSlug }) {
   const { pathname } = useLocation();
   let linkColor = "#112E3D";
 
-  let navItems = sideNav.map((item, index) => {
+  const sortedNav = sideNav.sort((a, b) => a.menuOrder - b.menuOrder);
+
+  let navItems = sortedNav.map((item, index) => {
+    let nestedLinks = item.children.nodes;
     let slug = `/${parentSlug}/${item.slug}`;
+    if (item.children.nodes.length > 0) {
+      console.log(item);
+      let sortedNested = nestedLinks.sort((a, b) => a.menuOrder - b.menuOrder);
+      nestedLinks = sortedNested.map((nest, index) => {
+        return (
+          <div key={index}>
+            <Link
+              to={`/${parentSlug}/${nest.slug}`}
+              style={{ color: linkColor }}
+            >
+              <li>{nest.title}</li>
+            </Link>
+          </div>
+        );
+      });
+    }
+    console.log("nestedLinks", nestedLinks);
+
     if (pathname === slug) {
       linkColor = "#008771";
     } else {
@@ -22,6 +43,7 @@ function SideNav({ sideNav, parentSlug }) {
         >
           {item.title}
         </Link>
+        {nestedLinks ? nestedLinks : null}
       </div>
     );
   });

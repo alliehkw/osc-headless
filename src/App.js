@@ -68,6 +68,16 @@ const app_data = gql`
             slug
             ... on Page {
               title
+              menuOrder
+              children {
+                nodes {
+                  slug
+                  ... on Page {
+                    title
+                    menuOrder
+                  }
+                }
+              }
             }
           }
         }
