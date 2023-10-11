@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
-import SideNav from "./placeHolderSectionTypes/SideNav.js";
+import SideNav from "./sections/SideNav.js";
 
 function Page({ page_data, screenSize, parent }) {
   console.log("page_data.parent", page_data.parent);

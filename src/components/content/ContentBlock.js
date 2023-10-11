@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import OneColumn from "./placeHolderSectionTypes/OneColumn.js";
-import TwoColumn from "./placeHolderSectionTypes/TwoColumn.js";
-import ThreeColumn from "./placeHolderSectionTypes/ThreeColumn.js";
+import OneColumn from "./sections/OneColumn.js";
+import TwoColumn from "./sections/TwoColumn.js";
+import ThreeColumn from "./sections/ThreeColumn.js";
 
 function ContentBlock({ content_data, screenSize, sectionPadding }) {
   console.log("sectionPadding", sectionPadding);
