@@ -4,12 +4,12 @@ import TwoColumn from "./sections/TwoColumn.js";
 import ThreeColumn from "./sections/ThreeColumn.js";
 
 function ContentBlock({ content_data, screenSize, sectionPadding }) {
-  console.log("sectionPadding", sectionPadding);
+
   let sectionType = "section";
   if (!sectionPadding) {
     sectionType = null;
   }
-  // console.log("content_data", content_data);
+
   const columnBlocks = content_data.columnBlocks;
 
   let contentColumns = columnBlocks.map((column, index) => {

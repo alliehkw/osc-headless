@@ -89,13 +89,13 @@ function ReviewBlockRotator({ review_content }) {
         }}
       >
         <button
-          className="white"
+          className="whitebtn"
           onClick={() => handleBackwardClick(currentIndex, setCurrentIndex)}
         >
           <BackArrow />
         </button>
         <button
-          className="green"
+          className="greenbtn"
           onClick={() => handleForwardClick(currentIndex, setCurrentIndex)}
         >
           <FrontArrow />

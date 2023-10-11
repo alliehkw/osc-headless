@@ -8,7 +8,7 @@ function Button({ button_data, blockWidth, screenSize }) {
   }
   let buttonWidth = "auto";
   let buttonPadding = null;
-  console.log("screenSize", screenSize);
+
   if (blockWidth === "singleLine") {
     buttonWidth = "fit-content";
     buttonPadding = "0";
@@ -19,17 +19,17 @@ function Button({ button_data, blockWidth, screenSize }) {
   return (
     <>
       {button_data.linkType === "page" ? (
-        <button className={button_data.buttonBackgroundColor}>
-          <Link to={button_data.pageLink.node.slug}>
+        <button className={`${button_data.buttonBackgroundColor}btn`}>
+          <Link to={button_data.pageLink.node.slug} className="link-text">
             {button_data.buttonText}
           </Link>
         </button>
       ) : (
         <button
-          className={button_data.buttonBackgroundColor}
+          className={`${button_data.buttonBackgroundColor}btn`}
           style={{ width: buttonWidth, paddingLeft: buttonPadding }}
         >
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a type="button" href={url} target="_blank" rel="noopener noreferrer" className="link-text">
             {button_data.buttonText}
           </a>
         </button>

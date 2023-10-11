@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Page from "./Page.js";
 function PageContent({ content_data, screenSize }) {
-  console.log("content_data", content_data);
+
 
   const pagesBlock = content_data.map((page, index) => {
     // Create Routes. Ensure that the home page has route "/"

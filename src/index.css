@@ -552,6 +552,18 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+button a:hover {
+  text-decoration: none;
+}
+
+button.transparent a:hover {
+  text-decoration: underline;
+}
+
 a#side-nav {
     transition: color 0.2s;
 }
@@ -573,42 +585,60 @@ button {
   padding: 12px var(--3sm);
 }
 
-button.green {
+button.greenbtn {
   background-color: var(--osc-brand-color);
   border-color: var(--osc-brand-color);
   color: var(--white);
 }
 
-button.green a {
-  background-color: var(--osc-brand-color);
+button.greenbtn:hover {
+  background-color: var(--osc-green-06);
+}
+
+button.greenbtn a {
   border-color: var(--osc-brand-color);
   color: var(--white);
 }
 
-button.white {
+button.whitebtn {
   background-color: var(--white);
   border-color: var(--gray-06);
   color: var(--gray-06);
 }
 
-button.white a {
-  background-color: var(--white);
+button.whitebtn a {
   border-color: var(--gray-06);
   color: var(--gray-06);
 }
 
-button.transparent {
-  background-color: transparent;
-  color: var(--osc-brand-color);
-  border-color: transparent;
-  /* text-wrap: nowrap; */
+button.whitebtn:hover {
+  background-color: var(--gray-06);
+  color: var(--white);
 }
 
-button.transparent a {
+button.whitebtn:hover .link-text  {
+
+  color: var(--white);
+}
+
+.back-arrow-svg .back-arrow-path {
+  stroke: var(--gray-06);
+}
+
+button.whitebtn:hover .back-arrow-svg .back-arrow-path {
+stroke: var(--white);
+}
+
+button.transparentbtn {
   background-color: transparent;
   color: var(--osc-brand-color);
   border-color: transparent;
-  /* text-wrap: nowrap; */
+}
+
+button.transparentbtn a {
+  background-color: transparent;
+  color: var(--osc-brand-color);
+  border-color: transparent;
 }
 
 .stars {
@@ -747,3 +777,4 @@ div::-webkit-scrollbar-track {
   height: var(--2sm);
   width: var(--2sm);
 }
+

@@ -31,7 +31,7 @@ function Buttons({ buttons_data, screenSize }) {
       />
     );
   });
-  console.log("buttons_data.blockAlign", buttons_data.blockAlign);
+
   return (
     <div
       className={buttons_data.buttonPadding[0]}
