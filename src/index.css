@@ -595,8 +595,17 @@ button.greenbtn:hover {
   background-color: var(--osc-green-06);
 }
 
+button.greenbtn:focus {
+  border: var(--gray-02);
+  background-color: var(--gray-02);
+}
+
+button.greenbtn:disabled {
+  border: 3px solid #B2DBD4;
+}
+
 button.greenbtn a {
-  border-color: var(--osc-brand-color);
+  /* border-color: var(--osc-brand-color); */
   color: var(--white);
 }
 
@@ -607,7 +616,7 @@ button.whitebtn {
 }
 
 button.whitebtn a {
-  border-color: var(--gray-06);
+  /* border-color: var(--gray-06); */
   color: var(--gray-06);
 }
 
@@ -616,8 +625,17 @@ button.whitebtn:hover {
   color: var(--white);
 }
 
-button.whitebtn:hover .link-text  {
+button.whitebtn:focus {
+  border: 3px solid #C6E0EE;
+}
 
+button.greenbtn:focus {
+  border: var(--gray-03);
+  color: var(--gray-03);
+  background-color: var(--white);
+}
+
+button.whitebtn:hover .link-text  {
   color: var(--white);
 }
 
