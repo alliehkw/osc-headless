@@ -62,6 +62,15 @@ const app_data = gql`
             id
           }
         }
+        ancestors {
+          nodes {
+            slug
+            id
+            ... on Page {
+              title
+            }
+          }
+        }
         children {
           nodes {
             id

@@ -4,7 +4,7 @@ import ContentBlock from "./ContentBlock";
 import SideNav from "./sections/SideNav.js";
 
 function Page({ page_data, screenSize, parent }) {
-
+  console.log("page_data", page_data);
   let sectionPadding = true;
   // TO DO: can get rid of sectionPadding cuz i dealt with it another way
   // Seperate out data to conditionally render heros and content sections if they exist

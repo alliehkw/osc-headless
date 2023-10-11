@@ -11,7 +11,6 @@ function SideNav({ sideNav, parentSlug }) {
     let nestedLinks = item.children.nodes;
     let slug = `/${parentSlug}/${item.slug}`;
     if (item.children.nodes.length > 0) {
-      console.log(item);
       let sortedNested = nestedLinks.sort((a, b) => a.menuOrder - b.menuOrder);
       nestedLinks = sortedNested.map((nest, index) => {
         return (
@@ -26,7 +25,6 @@ function SideNav({ sideNav, parentSlug }) {
         );
       });
     }
-    console.log("nestedLinks", nestedLinks);
 
     if (pathname === slug) {
       linkColor = "#008771";
