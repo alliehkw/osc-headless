@@ -3,7 +3,7 @@ import RichText from "./RichText.js";
 import Image from "./Image.js";
 import ReviewBlockRotator from "./ReviewBlockRotator.js";
 import Buttons from "../Buttons.js";
-function Column({ column_data }) {
+function Column({ column_data, screenSize }) {
   let columns;
   if (column_data.columnContent) {
     columns = column_data.columnContent.map((column, index) => {
@@ -52,7 +52,7 @@ function Column({ column_data }) {
         "FlexibleContentCustomContentBlocksSectionColumnBlocksTwoColumnColumnColumnContentButtons"
       ) {
         return (
-          <Buttons key={index} buttons_data={column}>
+          <Buttons key={index} buttons_data={column} screenSize={screenSize}>
             buttons
           </Buttons>
         );

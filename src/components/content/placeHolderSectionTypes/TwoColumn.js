@@ -1,7 +1,12 @@
 import { Grid } from "@mui/material";
 import Column from "../contentTypes/TwoColumn/Column.js";
 
-function TwoColumn({ column_data, column_layout, column_alignment }) {
+function TwoColumn({
+  column_data,
+  column_layout,
+  column_alignment,
+  screenSize,
+}) {
   let leftWidth;
   let rightWidth;
   let leftWidthNarrow = 12;
@@ -65,7 +70,7 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
         xl={leftWidth}
       >
         <div>
-          <Column column_data={column_data[0]} />
+          <Column column_data={column_data[0]} screenSize={screenSize} />
         </div>
       </Grid>
       <Grid
@@ -85,7 +90,7 @@ function TwoColumn({ column_data, column_layout, column_alignment }) {
         xl={rightWidth}
       >
         <div>
-          <Column column_data={column_data[1]} />
+          <Column column_data={column_data[1]} screenSize={screenSize} />
         </div>
       </Grid>
     </Grid>

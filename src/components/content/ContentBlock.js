@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import OneColumn from "./sectionTypes/OneColumn.js";
-import TwoColumn from "./sectionTypes/TwoColumn.js";
-import ThreeColumn from "./sectionTypes/ThreeColumn.js";
+import OneColumn from "./placeHolderSectionTypes/OneColumn.js";
+import TwoColumn from "./placeHolderSectionTypes/TwoColumn.js";
+import ThreeColumn from "./placeHolderSectionTypes/ThreeColumn.js";
 
 function ContentBlock({ content_data, screenSize, sectionPadding }) {
   console.log("sectionPadding", sectionPadding);
@@ -38,6 +38,7 @@ function ContentBlock({ content_data, screenSize, sectionPadding }) {
             column_data={column.column}
             column_layout={column.columnLayout}
             column_alignment={column.contentVerticalJustification}
+            screenSize={screenSize}
           />
         </div>
       );

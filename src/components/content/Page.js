@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material";
 import Hero from "./Hero.js";
 import ContentBlock from "./ContentBlock";
-import SideNav from "./sectionTypes/SideNav.js";
+import SideNav from "./placeHolderSectionTypes/SideNav.js";
 
 function Page({ page_data, screenSize, parent }) {
   console.log("page_data.parent", page_data.parent);
   let sectionPadding = true;
-
+  // TO DO: can get rid of sectionPadding cuz i dealt with it another way
   // Seperate out data to conditionally render heros and content sections if they exist
   let hero_data = [];
   let content_blocks = [];

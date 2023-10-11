@@ -1,6 +1,6 @@
 import Title from "../contentTypes/OneColumn/Title.js";
 import RichText from "../contentTypes/OneColumn/RichText.js";
-import Buttons from "../contentTypes/OneColumn/Buttons.js";
+import Buttons from "../contentTypes/Buttons.js";
 import Image from "../contentTypes/OneColumn/Image.js";
 import Video from "../contentTypes/OneColumn/Video.js";
 import Accolades from "../contentTypes/OneColumn/Accolades.js";
@@ -35,7 +35,7 @@ function OneColumn({ column_data, class_data, screenSize }) {
     ) {
       return (
         <div key={index}>
-          <Buttons buttons_data={column} />
+          <Buttons buttons_data={column} screenSize={screenSize} />
         </div>
       );
     }
