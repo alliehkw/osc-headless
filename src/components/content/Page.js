@@ -93,40 +93,44 @@ function Page({ page_data, screenSize, parent }) {
   }
   // TO DO: loop through content section and add that in
   return (
-    <div className="page">
-      {
-        parent ? (
-          <>
-            {parentHeros}
-            {parentPageContent}
-            <Grid
-              container
-              sx={{ display: "flex", justifyContent: "space-between" }}
-              className="section"
-              id="child"
-            >
-              <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
-                <div style={{ width: "100%" }}>
-                  <SideNav sideNav={sideNav} parentSlug={parent.slug} />
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={12} md={8.5} lg={8.5} xl={8.5}>
-                <div style={{ width: "100%" }}>
-                  {heros}
-                  {pageContent}
-                </div>
-              </Grid>
-            </Grid>
-          </>
-        ) : (
-          <>
-            {heros}
-            {pageContent}
-          </>
-        )
-        /* TO DO: if there is a parent make another grid that has a side nav and then also the rest of the stuff */
-      }
-    </div>
+    <>
+      {page_data ? (
+        <div className="page">
+          {
+            parent ? (
+              <>
+                {parentHeros}
+                {parentPageContent}
+                <Grid
+                  container
+                  sx={{ display: "flex", justifyContent: "space-between" }}
+                  className="section"
+                  id="child"
+                >
+                  <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+                    <div style={{ width: "100%" }}>
+                      <SideNav sideNav={sideNav} parentSlug={parent.slug} />
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={8.5} lg={8.5} xl={8.5}>
+                    <div style={{ width: "100%" }}>
+                      {heros}
+                      {pageContent}
+                    </div>
+                  </Grid>
+                </Grid>
+              </>
+            ) : (
+              <>
+                {heros}
+                {pageContent}
+              </>
+            )
+            /* TO DO: if there is a parent make another grid that has a side nav and then also the rest of the stuff */
+          }
+        </div>
+      ) : null}
+    </>
   );
 }
 

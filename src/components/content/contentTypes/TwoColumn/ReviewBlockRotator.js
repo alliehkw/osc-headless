@@ -72,10 +72,26 @@ function ReviewBlockRotator({ review_content }) {
           height: imageHeight,
           overflow: "auto",
           backgroundColor: "#EFF7FB",
+          position: "relative",
+          zIndex: 1,
         }}
       >
         <Review review_content={review_content} currentIndex={currentIndex} />
       </div>
+      <div
+        style={{
+          position: "absolute",
+          width: "calc(100% - 8px)", // Make sure the overlay doesn't cover the scroll bar
+          bottom: 0,
+          left: 0,
+          height: "20%",
+          background: "linear-gradient(to bottom, transparent, #EFF7FB)",
+          pointerEvents:
+            "none" /* This prevents the overlay from blocking interactions */,
+          zIndex: 2,
+        }}
+      ></div>
+
       <div
         className="arrows"
         style={{
@@ -86,6 +102,7 @@ function ReviewBlockRotator({ review_content }) {
           right: "24px", // Position the arrows div horizontally in the middle
           marginBottom: "-28px", // Adjust this value to control how much of the arrows div hangs off
           gap: "16px",
+          zIndex: 3,
         }}
       >
         <button

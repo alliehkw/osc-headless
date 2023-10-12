@@ -4,7 +4,6 @@ import TwoColumn from "./sections/TwoColumn.js";
 import ThreeColumn from "./sections/ThreeColumn.js";
 
 function ContentBlock({ content_data, screenSize, sectionPadding }) {
-
   let sectionType = "section";
   if (!sectionPadding) {
     sectionType = null;
@@ -60,7 +59,7 @@ function ContentBlock({ content_data, screenSize, sectionPadding }) {
   return (
     // TO DO: add in custom padding dynamically !!
     <Box className={`${sectionType} ${content_data.backgroundColor[0]}`}>
-      {contentColumns}
+      {contentColumns ? contentColumns : null}
     </Box>
   );
 }

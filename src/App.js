@@ -1,11 +1,9 @@
-// import React, { useEffect, useState } from "react";
 import NavBar from "./components/navbar/NavBar.js";
 import Footer from "./components/footer/Footer.js";
 import PageContent from "./components/content/PageContent.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ScrollToTop from "./components/reusables/ScrollToTop.js";
-// import Home from "./components/roundii/Home.js";
 import { ThemeProvider, createTheme } from "@mui/system";
 import React, { useState, useEffect } from "react";
 
@@ -441,7 +439,6 @@ function App() {
           <Router>
             <ScrollToTop />
             <NavBar menu_data={navItems} />
-            {/* <Home /> */}
             <PageContent
               content_data={data.pages.nodes}
               screenSize={screenSize}

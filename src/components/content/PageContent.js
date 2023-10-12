@@ -30,7 +30,7 @@ function PageContent({ content_data, screenSize }) {
   });
   return (
     <div className="content-container">
-      <Routes>{pagesBlock}</Routes>
+      {content_data ? <Routes>{pagesBlock}</Routes> : null}
     </div>
   );
 }
